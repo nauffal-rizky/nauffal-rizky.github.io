@@ -1,0 +1,4 @@
+git init - inisisasi
+git status
+git add .
+git commit -m "pesannya apa"
