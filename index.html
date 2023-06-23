@@ -5,48 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 
     <!-- Feather -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./src/styles/style.css" />
   </head>
   <body>
-    <div class="go-to-up">
-      <a href="#home">
-        <i data-feather="chevron-up"></i>
-      </a>
-    </div>
+    <a href="#home" class="go-to-up">
+      <i data-feather="chevron-up"></i>
+    </a>
     <header>
       <nav class="navbar">
         <section class="navbar-center">
           <div class="header-title">
-            <a href="#home">website name</a>
+            <a href="#home">nauffal.site</a>
             <button class="navToggle">
               <i data-feather="chevron-down"></i>
             </button>
           </div>
           <div class="toggle-container">
             <ul class="section-center">
-              <li><a href="#about" class="scroll-link">nav-link</a></li>
-              <li><a href="#skills" class="scroll-link">nav-link</a></li>
-              <li><a href="#service" class="scroll-link">nav-link</a></li>
-              <li><a href="#contact" class="scroll-link">nav-link</a></li>
+              <li><a href="#about" class="scroll-link">about</a></li>
+              <li><a href="#skills" class="scroll-link">skills</a></li>
+              <li><a href="#service" class="scroll-link">service</a></li>
+              <li><a href="#contact" class="scroll-link">contact</a></li>
             </ul>
             <ul class="social-center">
               <li>
-                <a href="https://www.linkedin.com" target="_blank" class="linkedin">
+                <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank" class="linkedin">
                   <i data-feather="linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com" target="_blank" class="instagram">
+                <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram">
                   <i data-feather="instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.youtube.com" target="_blank" class="youtube">
+                <a href="" target="_blank" class="youtube">
                   <i data-feather="youtube"></i>
                 </a>
               </li>
@@ -56,10 +52,10 @@
       </nav>
       <div class="jumbotron">
         <div class="jumbotron-content">
-          <p class="text1">lorem</p>
-          <p class="text2">ipsum <a href="https://www.instagram.com" target="_blank">dolor</a>,</p>
-          <p class="text3">sit amet consectetur adipisicing</p>
-          <p class="text4">Me as: <span>???, ???</span></p>
+          <p class="text1">Hi!,</p>
+          <p class="text2">I'm <a href="https://www.instagram.com/nauffal.code/" target="_blank">Nauffal</a>,</p>
+          <p class="text3">welcome to my website</p>
+          <p class="text4">Me as: <span>Web developer, Web Designer</span></p>
           <a href="#about" class="explore-btn btn">Explore more...</a>
         </div>
       </div>
@@ -67,7 +63,7 @@
     <main>
       <article class="about" id="about">
         <div class="title">
-          <h1>nav-link</h1>
+          <h1>about</h1>
           <div class="underline-contain">
             <div class="underline"></div>
             <div class="circle"></div>
@@ -77,23 +73,26 @@
           <div class="about-content">
             <div class="profile">
               <div class="desc-about desc">
+                <h2>Introduction</h2>
                 <p class="intro-1">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro aut culpa sunt quae sapiente? Esse quae laudantium nobis iusto magni debitis ab quasi rem consequatur, architecto mollitia repudiandae officiis neque excepturi error, sequi quibusdam ut similique tenetur animi et commodi. Quos dolorum quisquam, ipsa sunt deserunt vitae sed doloremque natus.
+                  Hi, my name is Nauffal. I live in Bogor, Indonesia. I like programming and it already became my hobby. I found programming interesting when I realized how hard it was to make
+                  websites, applications, and even games. There are creative people behind that who developed it. And I'm on my way to becoming one of them by learning programming, especially Front-end development stuff
+                  including HTML, CSS, and JavaScript, by practicing my skills in creating simple applications and websites.
                 </p>
                 <p class="intro-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sit laboriosam dignissimos ea excepturi, delectus ut dolorem consequuntur quas <a href="" target="_blank" class="YCM">link</a>.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis a alias ratione molestiae. Tempore autem, natus nemo totam libero illum!
+                  I got my opportunity to know about Programming when I attended a computer class on <a href="https://ciptamandiri.net/home/" target="_blank" class="YCM">Yayasan Cipta Mandiri</a>.
+                  The place where I discovered my dreams. On January 2022 I became curious about Programming and find out about it on the internet. I do find programming interesting and I do programming until now.
                 </p>
-                <a href="" target="_blank" download="" class="cv-btn btn">Download CV</a>
+                <a href="../download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
               </div>
-              <img src="" alt="photo" class="my-img"></img>
+              <img src="../src/assets/profile-nomask2.JPG" class="my-img"></img>
             </div>
           </div>
         </section>
       </article>
       <article class="skills" id="skills">
         <div class="title">
-          <h1>nav-link</h1>
+          <h1>skills</h1>
           <div class="underline-contain">
             <div class="circle"></div>
             <div class="underline"></div>
@@ -102,19 +101,20 @@
         <section class="skill-center">
           <div class="skill-content">
             <div class="skill-exp">
-              <h2 class="h-skill">Lorem ipsum dolor sit amet</h2>
+              <h2 class="h-skill">My creative skills & experiences</h2>
               <div class="description">
                 <div class="simple">
                   <p class="desc-skill desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, dolorum. Earum architecto eaque laborum et a beatae error culpa. Assumenda eius ducimus dolore ratione iste, repellat saepe dicta tenetur fugiat.
+                    I have been learning HTML, CSS, and JavaScript for 1 year. Firstly by watching videos online, and applying for a scholarship. Now I'm still practicing my skills by doing some simple
+                    projects by myself, such as making Websites and simple Applications with my HTML, CSS, and JavaScript skills
                   </p>
                 </div>
                 <div class="details">
                   <p class="detail desc-detail-1 desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At nihil voluptatum iste id ipsa corrupti consectetur adipisci explicabo ab obcaecati? <a href="" target="_blank" class="dicoding">link</a> Lorem, ipsum. <a href="" target="_blank" class="idCamp">link</a>. Lorem ipsum dolor sit amet. <a href="" target="_blank" class="dicoding">link</a> Lorem ipsum dolor sit amet.
+                    I have been learning HTML, CSS, and JavaScript since January 2022 by watching videos online and applying for a Front-End Development scholarship on <a href="https://www.dicoding.com/" target="_blank" class="dicoding">Dicoding</a> sponsored by <a href="https://idcamp.ioh.co.id/" target="_blank" class="idCamp">IDCamp Indosat Hutchison</a>. I get an official certificate from <a href="https://www.dicoding.com/" target="_blank" class="dicoding">Dicoding</a> for every class I completed
                   </p> 
                   <p class="detail desc-detail-2 desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro possimus dicta tempore asperiores, veniam tenetur necessitatibus. Praesentium reiciendis illo animi nihil earum, dignissimos, saepe sit aspernatur aut officiis voluptatum quam.
+                    I feel confident about my skill in Web Programming. I frequently use HTML, CSS, and JavaScript to make some Websites and Simple Web Applications for practice purposes, so I'm getting used to using it
                   </p>
                 </div>
               </div>
@@ -125,7 +125,7 @@
                 <div class="header-graph">
                   <div class="graph-name">
                     <abbr title="HyperText Markup Language">
-                      <a href="https://www.w3schools.com/html/" target="_blank" >skill</a>
+                      <a href="https://www.w3schools.com/html/" target="_blank" >HTML</a>
                     </abbr>
                     <i class="skillToggle" data-feather="chevron-down"></i>
                   </div>
@@ -133,14 +133,14 @@
                 </div>
                 <div class="line html"></div>
                 <div class="skill-dropdown">
-                  <p class="desc-graph desc"><abbr title="skills">skill</abbr>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dicta vero sed, expedita a aliquid molestiae minima animi est ipsam quod, quas consectetur maiores, deserunt accusamus veritatis error eveniet nobis! <abbr title="skills">skill</abbr> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ipsum.</p>
+                  <p class="desc-graph desc"><abbr title="Hypertext Markup Language">HTML</abbr>, Hypertext Markup Language is like the core of a website, where the appearance of our website depends on the HTML code that we write. Unwittingly I was used to using <abbr title="HyperText Markup Language">HTML</abbr> and you could say I was proficient in this field because i regurarly using HTML for Web Development</p>
                 </div>
               </div>
               <div class="graph">
                 <div class="header-graph">
                   <div class="graph-name">
                     <abbr title="Cascading Style Sheets">
-                      <a href="https://www.w3schools.com/css/" target="_blank" >skill</a>
+                      <a href="https://www.w3schools.com/css/" target="_blank" >CSS</a>
                     </abbr>
                     <i class="skillToggle" data-feather="chevron-down"></i>
                   </div>
@@ -148,20 +148,20 @@
                 </div>
                 <div class="line css"></div>
                 <div class="skill-dropdown">
-                  <p class="desc-graph desc">lorem <abbr title="skills">skill</abbr> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quidem? <abbr title="skills">skill</abbr> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa qui quibusdam accusamus dolorem, assumenda esse ea neque voluptate rerum vel. <abbr title="skills">skill</abbr>, Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos fugiat voluptatibus nobis odit ipsam atque molestias dolore quidem iusto.</p>
+                  <p class="desc-graph desc">If <abbr title="Hypertext Markup Language">HTML</abbr> is the core of a website, you could say <abbr title="Cascading Style Sheet">CSS</abbr> is a tool to beautify your website to making it look more attractive. When creating a website I do really pay attention to the CSS I apply to my Website or <abbr title="Hypertext Markup Language">HTML</abbr>, such as colors, font size, width & height, flexbox, grid, responsive break points, etc. Hence I am quite proficient in this field</p>
                 </div>
               </div>
               <div class="graph">
                 <div class="header-graph">
                   <div class="graph-name">
-                    <a href="https://www.w3schools.com/js/" target="_blank" >skill</a>
+                    <a href="https://www.w3schools.com/js/" target="_blank" >JavaScript</a>
                     <i class="skillToggle" data-feather="chevron-down"></i>
                   </div>
                   <span>80%</span>
                 </div>
                 <div class="line javascript"></div>
                 <div class="skill-dropdown">
-                  <p class="desc-graph desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ipsam laboriosam voluptatum vel non pariatur. <abbr title="skills">skill</abbr>, <abbr title="skills">skill</abbr> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic quam sit iusto corporis dolores provident, asperiores architecto dolor inventore!</p>
+                  <p class="desc-graph desc">In website, JavaScript is used to make some algorithms, events, or orders for the Website. I frequently use JavaScript for <abbr title="Document Object Model">DOM</abbr>, <abbr title="Browser Object Model">BOM</abbr> in order to make my website more Interactive. I'm pretty good at making my websites more interactive</p>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@
       </article>
       <article class="service" id="service">
         <div class="title">
-          <h1>nav-link</h1>
+          <h1>Works & Services</h1>
           <div class="underline-contain">
             <div class="underline"></div>
             <div class="circle"></div>
@@ -178,22 +178,22 @@
         </div>
         <section class="service-center">
           <div class="service-content">
-            <h2 class="h-service">service name</h2>
+            <h2 class="h-service">Web Development</h2>
             <div class="services-container">
               <div class="row">
-                <img src="" alt="" />
-                <h3 class="name">service 1</h3>
-                <p class="desc-service desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam non praesentium sit error quod distinctio nostrum magni iure tempora iusto?</p>
+                <img src="../src/assets/website-4.jpg" alt="service-1" />
+                <h3 class="name">Landing page</h3>
+                <p class="desc-service desc">I offer you the service of creating a simple landing page using simple HTML, CSS, and JavaScript on the landing page.</p>
               </div>
               <div class="row">
-                <img src="" alt="" />
-                <h3 class="name">service 2</h3>
-                <p class="desc-service desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nesciunt eligendi nisi dicta illum ut?</p>
+                <img src="../src/assets/website-2.jpg" alt="service-2" />
+                <h3 class="name">Simple Commercial Website</h3>
+                <p class="desc-service desc">I offer you the service of creating a simple commercial website using simple HTML, CSS, and JavaScript.</p>
               </div>
               <div class="row">
-                <img src="" alt="" />
-                <h3 class="name">service 3</h3>
-                <p class="desc-service desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente excepturi itaque, hic reprehenderit explicabo fuga doloremque nisi quod dolore.</p>
+                <img src="../src/assets/coding.jpg" alt="service-3" />
+                <h3 class="name">Portfolio Website</h3>
+                <p class="desc-service desc">I offer you the service of creating a portfolio website based on your instructions and desire.</p>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
       </article>
       <article class="contact" id="contact">
         <div class="title">
-          <h1>nav-link</h1>
+          <h1>contact</h1>
           <div class="underline-contain">
             <div class="circle"></div>
             <div class="underline"></div>
@@ -211,31 +211,37 @@
           <div class="contact-content">
             <div class="my-info">
               <div class="info-header">
-                <h2 class="h-contact">Lorem, ipsum dolor.</h2>
+                <h2 class="h-contact">Get in touch</h2>
                 <p class="desc-contact desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, neque? <a href="">link</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, dolor.
+                  If you want to have a conversation with me or need anything from me, you can DM me on my <a href="">Instagram</a> or you can just email me, at the email listed below
                 </p>
               </div>
               <div class="icons">
                 <div class="row">
-                  <i data-feather="user"></i>
+                  <div class="contact-logo">
+                    <i data-feather="user"></i>
+                  </div>
                   <div class="info">
                     <span class="head">Name:</span>
-                    <span class="subtitle">???</span>
+                    <span class="subtitle">nauffal nur rizky</span>
                   </div>
                 </div>
                 <div class="row">
-                  <i data-feather="mail"></i>
+                  <div class="contact-logo">
+                    <i data-feather="mail"></i>
+                  </div>
                   <div class="info">
                     <span class="head">E-mail:</span>
-                    <span class="subtitle">???</span>
+                    <span class="subtitle">nauffal2005@gmail.com</span>
                   </div>
                 </div>
                 <div class="row">
-                  <i data-feather="map-pin"></i>
+                  <div class="contact-logo">
+                    <i data-feather="map-pin"></i>
+                  </div>
                   <div class="info">
                     <span class="head">Address:</span>
-                    <span class="subtitle">???</span>
+                    <span class="subtitle">bogor, indonesia</span>
                   </div>
                 </div>
               </div>
@@ -274,7 +280,7 @@
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com" target="_blank" class="instagram">
+            <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram">
               <i data-feather="instagram"></i>
             </a>
           </li>
@@ -285,19 +291,19 @@
           </li>
         </ul>
         <ul class="section-footer">
-          <li><a href="#about">nav-link</a></li>
-          <li><a href="#skills">nav-link</a></li>
-          <li><a href="#works">nav-link</a></li>
-          <li><a href="#contact">nav-link</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#works">works</a></li>
+          <li><a href="#contact">contact</a></li>
         </ul>
       </div>
-      <span>Created by <a href="#home">???</a> | <i class="far fa-copyright"></i><span id="date"></span> All rights reserved.</span>
+      <span>Created by <a href="#home">Nauffal</a> | <i class="far fa-copyright"></i><span id="date"></span> All rights reserved.</span>
     </footer>
 
     <!-- Java Script -->
     <script>
       feather.replace();
     </script>
-    <script src="../main.js"></script>
+    <script src="./src/js/main.js"></script>
   </body>
 </html>

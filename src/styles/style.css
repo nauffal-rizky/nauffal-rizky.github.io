@@ -20,59 +20,22 @@ html {
   scroll-behavior: smooth;
 }
 
-.menu-system {
+.go-to-up {
   position: fixed;
   bottom: 25px;
   right: -100px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  z-index: 5;
-  transition: all 0.3s ease-in-out;
-}
-.go-to-up,
-.menu,
-.logout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-.menu {
   background-color: var(--color-b2);
-  transform: scale(1.1);
-  z-index: 2;
-}
-.go-to-up {
-  background-color: var(--success);
-  transform: translateX(100px);
-  transition: all 0.3s ease;
-}
-.logout {
-  background-color: var(--danger);
-  transform: translateX(50px);
-}
-.menu {
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-.blur .menu {
-  opacity: 0;
-  z-index: -1;
-}
-.blur .go-to-up {
-  transform: translateX(50px);
-}
-.flip {
-  transform: scaleY(-1);
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 55%;
+  transition: all 0.3s ease-out;
 }
 .show-link {
   right: 25px;
+  transform: rotate(-360deg);
 }
 
 header {
@@ -200,6 +163,7 @@ header {
 .jumbotron-content .text4 {
   font-family: 'Roboto', 'Arial', sans-serif;
   color: #fff;
+  text-shadow: 2px 2px 4px #000;
 }
 .jumbotron-content .text1 {
   font-size: 50px;
@@ -263,7 +227,7 @@ footer span a:hover::after {
   font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
   font-size: 30px;
-  margin: 0 0 100px 0;
+  margin: 0 0 50px 0;
 }
 .about .title h1,
 .skills .title h1,
@@ -297,17 +261,18 @@ footer span a:hover::after {
   border: 2px solid #000;
   border-radius: 15px;
 }
-.about-center,
 .service-center,
 .skill-center {
   display: flex;
   justify-content: center;
 }
-.about-content,
 .skill-content,
 .contact-content,
 .service-content {
   width: 90%;
+  font-family: 'Poppins', sans-serif;
+}
+.about-content {
   font-family: 'Poppins', sans-serif;
 }
 .profile {
@@ -323,8 +288,15 @@ footer span a:hover::after {
 .desc-about {
   order: 1;
   width: 60%;
-  text-indent: 10%;
   line-height: 1.5;
+}
+.desc-about h2 {
+  display: inline;
+  color: var(--color-b2);
+  transition: 0.3s;
+}
+.desc-about h2:hover {
+  letter-spacing: 1.5px;
 }
 .intro-2 {
   margin: 10px 0 30px 0;
@@ -342,10 +314,14 @@ footer span a:hover::after {
 .my-img {
   width: 300px;
   height: 300px;
-  object-fit: cover;
   padding: 5px;
   border: 2px solid var(--color-b2);
   border-radius: 5px;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+.my-img:hover {
+  padding: 8px;
 }
 
 .skills {
@@ -387,10 +363,10 @@ footer span a:hover::after {
   overflow-y: hidden;
 }
 .h-skill {
-  display: inline;
+  display: inline-block;
   background-color: var(--color-b1);
   color: #fff;
-  padding: 0 5px;
+  padding: 5px;
 }
 .description {
   margin: 10px 0 0 0;
