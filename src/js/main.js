@@ -1,3 +1,9 @@
+// DOMContentLoaded
+window.addEventListener('DOMContentLoaded', () => {
+  desc.style.height = `${simpleDescHeight}px`;
+});
+
+// SCROLL
 const nav = document.querySelector('.navbar');
 const goToUp = document.querySelector('.go-to-up');
 window.addEventListener('scroll', () => {
@@ -22,6 +28,7 @@ scrollLinks.forEach((link) => {
   });
 });
 
+// SCROLL
 const toggleContain = document.querySelector('.toggle-container');
 const sectionCenter = document.querySelector('.section-center');
 const socialCenter = document.querySelector('.social-center');
@@ -40,51 +47,80 @@ navToggle.addEventListener('click', () => {
   }
 });
 
+// SKILLS
+const desc = document.querySelector('.description');
+const simpleDesc = desc.querySelector('.simple-desc');
+const simpleDescHeight = simpleDesc.getBoundingClientRect().height;
+
+const detailDesc = desc.querySelector('.detail-desc');
+const detailDescHeight = detailDesc.getBoundingClientRect().height;
+
 const descBtn = document.querySelector('.desc-btn');
 descBtn.addEventListener('click', () => {
-  descBtn.classList.toggle('back');
-
-  const simple = document.querySelector('.simple');
-  const descSkill = document.querySelector('.desc-skill');
-  const descSkillHeight = descSkill.getBoundingClientRect().height;
-
-  const details = document.querySelector('.details');
-  const descDetail1 = document.querySelector('.desc-detail-1');
-  const descDetail2 = document.querySelector('.desc-detail-2');
-
-  const descHeight1 = descDetail1.getBoundingClientRect().height;
-  const descHeight2 = descDetail2.getBoundingClientRect().height;
-
-  if (descBtn.classList.contains('back')) {
-    simple.style.height = 0;
-    descBtn.textContent = `Go back!!`;
-    details.style.height = `${descHeight1 + descHeight2 + 15}px`;
+  if (descBtn.innerText === `Read less...`) {
+    desc.style.height = `${simpleDescHeight}px`;
+    descBtn.innerText = `Read details...`;
   } else {
-    simple.style.height = `${descSkillHeight}px`;
-    descBtn.textContent = `Read details...`;
-    details.style.height = 0;
+    desc.style.height = `${simpleDescHeight + detailDescHeight}px`;
+    descBtn.innerText = `Read less...`;
   }
 });
 
+// SKILLS-DROPDOWN
 const graphs = document.querySelectorAll('.graph');
 graphs.forEach((graph) => {
-  const dropdown = graph.querySelector('.skill-dropdown');
-  const dropdownMenu = graph.querySelector('.desc-graph');
-  const dropdownMenuHeight = dropdownMenu.getBoundingClientRect().height;
-
   const skillToggle = graph.querySelector('.skillToggle');
   skillToggle.addEventListener('click', () => {
-    skillToggle.classList.toggle('flip');
-    dropdown.classList.toggle('show');
+    const dropdown = graph.querySelector('.skill-dropdown');
+    const skillDropdownHeight = dropdown.querySelector('p').getBoundingClientRect().height;
 
-    if (dropdown.classList.contains('show')) {
-      dropdown.style.height = `${dropdownMenuHeight}px`;
+    graph.classList.toggle('show');
+
+    graphs.forEach((item) => {
+      if (item !== graph) {
+        item.classList.remove('show');
+
+        const dropdownItem = item.querySelector('.skill-dropdown');
+        const skillToggleItem = item.querySelector('.skillToggle');
+        dropdownItem.style.height = 0;
+        skillToggleItem.classList.remove('flip');
+      }
+    });
+
+    if (graph.classList.contains('show')) {
+      dropdown.style.height = `${skillDropdownHeight}px`;
+      skillToggle.classList.add('flip');
     } else {
       dropdown.style.height = 0;
+      skillToggle.classList.remove('flip');
     }
   });
 });
 
+// SERVICE
+const btnContain = document.querySelector('.package-name');
+const btns = document.querySelectorAll('.package-name span');
+const contents = document.querySelectorAll('.package-desc');
+
+btnContain.addEventListener('click', (e) => {
+  const IDs = e.target.dataset.id;
+
+  if (IDs) {
+    btns.forEach((btn) => {
+      btn.classList.remove('active');
+      e.target.classList.add('active');
+    });
+
+    contents.forEach((content) => {
+      content.classList.remove('active');
+
+      const currentTarget = document.getElementById(IDs);
+      currentTarget.classList.add('active');
+    });
+  }
+});
+
+// CONTACT
 const refreshInput = document.querySelector('.refresh-btn');
 refreshInput.addEventListener('click', () => {
   const inputs = document.querySelectorAll('.input');

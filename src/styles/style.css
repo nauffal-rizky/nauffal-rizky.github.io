@@ -47,6 +47,9 @@ header {
   position: fixed;
   left: 0;
   right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: transparent;
   padding: 20px 40px;
   transition: all 0.3s ease;
@@ -55,30 +58,15 @@ header {
 .fixed {
   background-color: var(--color-b1);
 }
-.navbar-center {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-}
 .toggle-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
-  width: 100%;
+  width: 55%;
 }
-.section-center {
-  gap: 15px;
-}
+.section-center,
 .social-center {
-  width: 100px;
-}
-@media (min-width: 950px) {
-  .social-center {
-    width: 150px;
-  }
+  gap: 15px;
 }
 .section-center,
 .social-center,
@@ -139,12 +127,15 @@ header {
   border: none;
   transition: all 0.3s ease;
 }
+.navToggle.flip,
+.skillToggle.flip {
+  transform: scale(-1);
+}
 
 .social-center li a svg {
   transition: all 0.3s ease;
 }
 .social-center li a svg:hover,
-.icons .row svg:hover,
 .social-footer li a svg:hover {
   transform: scale(1.5);
 }
@@ -266,7 +257,6 @@ footer span a:hover::after {
   display: flex;
   justify-content: center;
 }
-.skill-content,
 .contact-content,
 .service-content {
   width: 90%;
@@ -281,13 +271,9 @@ footer span a:hover::after {
   align-items: center;
   gap: 50px;
 }
-.desc {
-  font-size: 16px;
-  text-align: justify;
-}
 .desc-about {
   order: 1;
-  width: 60%;
+  width: 45%;
   line-height: 1.5;
 }
 .desc-about h2 {
@@ -298,18 +284,18 @@ footer span a:hover::after {
 .desc-about h2:hover {
   letter-spacing: 1.5px;
 }
-.intro-2 {
-  margin: 10px 0 30px 0;
+.intro-1 {
+  margin: 10px 0 0 0;
 }
-.intro-2 .YCM {
+.intro-1 .YCM {
   color: var(--color-b2);
 }
-.intro-2 .YCM:hover {
+.intro-1 .YCM:hover {
   color: #d65050;
   text-decoration: underline;
 }
 .cv-btn {
-  display: inline;
+  display: inline-block;
 }
 .my-img {
   width: 300px;
@@ -324,6 +310,7 @@ footer span a:hover::after {
   padding: 8px;
 }
 
+/* SKILLS */
 .skills {
   background-image: url('../assets/light-bulb-2.jpg');
   background-size: cover;
@@ -351,53 +338,46 @@ footer span a:hover::after {
   border: 2px solid #fff;
 }
 .skill-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
+  max-width: 90%;
+  width: 600px;
   font-family: 'Poppins', sans-serif;
 }
+@media (min-width: 1057px) {
+  .skill-content {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+  }
+}
+
 .skill-exp {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 8px 16px;
+  border-radius: 5px;
   overflow-y: hidden;
 }
 .h-skill {
   display: inline-block;
   background-color: var(--color-b1);
   color: #fff;
-  padding: 5px;
+  padding: 0 5px;
 }
 .description {
   margin: 10px 0 0 0;
-  overflow: hidden;
-}
-.desc-skill {
-  display: block;
-}
-.simple {
-  transition: 0.3s;
-  overflow: hidden;
-}
-.details {
-  height: 0;
-  transition: 0.3s;
-  overflow: hidden;
-}
-.desc-detail-2 {
-  margin: 10px 0 0 0;
-}
-.detail .dicoding,
-.detail .idCamp {
-  color: var(--color-b2);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
-.detail .dicoding:hover {
-  color: #3d3d3d;
+.detail-desc {
+  transition: 0.3s;
 }
-.detail .idCamp:hover {
-  color: red;
+.detail-desc p:first-child {
+  padding: 5px 0;
 }
+
 .explore-btn,
 .cv-btn,
 .desc-btn,
@@ -420,11 +400,13 @@ footer span a:hover::after {
   background-color: rgba(4, 28, 50, 0.8);
   font-family: 'Roboto', sans-serif;
   padding: 6px 12px 10px;
+  border-radius: 5px;
 }
 .graph {
   overflow: hidden;
   transition: all 0.3s ease;
 }
+
 .header-graph {
   display: flex;
   justify-content: space-between;
@@ -438,12 +420,22 @@ footer span a:hover::after {
   gap: 5px;
 }
 .graph-name a {
+  position: relative;
   color: #fff;
-}
-.graph-name a:nth-child(1):hover,
-.graph-name abbr:hover {
-  text-decoration: underline;
   cursor: pointer;
+}
+.graph-name a::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  border-bottom: 1.5px solid #fff;
+  transition: 0.3s;
+}
+.graph-name a:hover::after {
+  right: 0%;
 }
 .skillToggle {
   transition: all 0.3s ease;
@@ -456,9 +448,7 @@ footer span a:hover::after {
   margin: 5px 0 0 0;
   border-radius: 5px;
 }
-.line.html:before,
-.line.css:before,
-.line.javascript:before {
+.line::before {
   content: '';
   position: absolute;
   top: 0;
@@ -469,33 +459,40 @@ footer span a:hover::after {
 }
 .line.html:before {
   width: 95%;
-  background-color: #ffea20;
+  background-color: #e34c26;
 }
 .line.css:before {
   width: 90%;
-  background-color: rgb(215, 40, 40);
+  background-color: #2965f1;
 }
 .line.javascript:before {
   width: 80%;
-  background-color: green;
+  background-color: #f0db4f;
+}
+.line.php:before {
+  width: 60%;
+  background-color: #474a8a;
 }
 .skill-dropdown {
   height: 0;
   transition: all 0.3s ease;
 }
+
 .desc-graph {
   background-color: #fff;
   color: var(--color-b1);
-  letter-spacing: 1px;
-  line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  line-height: 1.5;
   padding: 10px;
   margin: 10px 0 0 0;
 }
-.desc-graph abbr {
+.desc-graph abbr,
+.desc-graph a {
   color: var(--color-b2);
 }
 
+/* SERVICE */
 .h-service {
   color: var(--color-b3);
   font-size: 25px;
@@ -507,14 +504,15 @@ footer span a:hover::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
+  margin: 0 0 50px 0;
 }
 .services-container .row {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 0 20px 0;
   gap: 15px;
-  padding: 0 0 25px 0;
 }
 .services-container .row::after {
   border-bottom: 3px solid var(--color-b2);
@@ -534,8 +532,108 @@ footer span a:hover::after {
 .desc-service {
   width: 90%;
   font-family: 'Roboto', sans-serif;
+  text-align: justify;
 }
 
+.package-container {
+  display: flex;
+  justify-content: center;
+}
+.package-table {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  width: 800px;
+  border: 1px solid #ccc;
+}
+.package-name {
+  display: flex;
+}
+.package-name span {
+  width: 100%;
+  background-color: #fafafa;
+  color: #74767e;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+.package-name span.active {
+  background-color: #fff;
+  color: var(--color-b2);
+  border-bottom: 2px solid var(--color-b2) !important;
+}
+.package-name span:nth-child(1),
+.package-name span:nth-child(3) {
+  border-bottom: 1px solid #dadbdd;
+}
+.package-name span:nth-child(2) {
+  border: 1px solid #dadbdd;
+  border-top: none;
+}
+.package-desc {
+  display: none;
+  padding: 10px 25px;
+}
+.package-desc.active {
+  display: block !important;
+}
+.package-desc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.package-desc-header h3 {
+  color: var(--color-b3);
+  font-size: 20px;
+}
+.package-desc-header span {
+  color: var(--color-b2);
+  font-size: 20px;
+}
+.package-desc p {
+  color: #62646a;
+  font-family: 'Arial', sans-serif;
+  margin: 10px 0px 20px 0px;
+}
+.delivery-revision {
+  display: flex;
+  gap: 20px;
+  margin: 0px 0px 5px 0px;
+}
+.delivery,
+.revision {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.delivery svg,
+.revision svg {
+  color: var(--color-b4);
+}
+.delivery span,
+.revision span {
+  color: var(--color-b1);
+}
+.package-benefits {
+  display: flex;
+  flex-direction: column;
+}
+.package-benefits .row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+.package-benefits .row svg {
+  width: 20px;
+  color: limegreen;
+}
+.package-benefits .row span {
+  color: #95979d;
+  font-family: 'Arial', sans-serif;
+}
+
+/* CONTACT */
 .contact {
   background-color: rgb(0, 0, 0, 0.2);
   background-image: url('../assets/light-bulb.jpg');
@@ -548,6 +646,8 @@ footer span a:hover::after {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   margin: 0 auto;
   gap: 15px;
+  max-width: 90%;
+  width: 1000px;
 }
 .my-info {
   display: flex;
@@ -590,12 +690,15 @@ footer span a:hover::after {
   background-color: var(--color-b2);
   padding: 5px;
   border-radius: 10px;
+  transition: 0.3s;
+}
+.contact-logo:hover {
+  transform: scale(1.15);
 }
 .contact-logo svg {
   width: 30px;
   height: 30px;
   color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .info {
   display: flex;
@@ -680,6 +783,11 @@ footer {
     height: 400px;
   }
 }
+@media (max-width: 1024px) {
+  .toggle-container {
+    width: 62%;
+  }
+}
 @media (max-width: 1000px) {
   .profile {
     flex-direction: column;
@@ -703,6 +811,9 @@ footer {
   .section-center li a {
     font-size: 16px;
   }
+  .toggle-container {
+    width: 60%;
+  }
   .jumbotron-content {
     margin: 0 0 0 30px;
   }
@@ -715,8 +826,16 @@ footer {
   .jumbotron-content .text3 {
     font-size: 35px;
   }
+  .contact-form {
+    max-width: 100%;
+    width: 500px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 768px) {
+  .toggle-container {
+    width: 65%;
+  }
   .jumbotron-content .text1 {
     font-size: 30px;
   }
@@ -745,12 +864,28 @@ footer {
     width: 300px;
     height: 250px;
   }
+  .package-desc-header h3,
+  .package-desc-header span {
+    font-size: 18px;
+  }
+  .package-desc p {
+    font-size: 15px;
+  }
+  .delivery span,
+  .revision span {
+    font-size: 15px;
+  }
+}
+@media (max-width: 705px) {
+  .desc-service {
+    width: 80%;
+  }
 }
 @media (max-width: 678px) {
   .navbar {
     padding: 10px 20px;
   }
-  .navbar-center {
+  .navbar {
     flex-direction: column;
     gap: 0px;
     overflow-y: hidden;
@@ -790,6 +925,9 @@ footer {
   .desc {
     font-size: 14px;
   }
+  .desc-service {
+    font-size: 16px;
+  }
   .header-graph {
     font-size: 16px;
   }
@@ -817,8 +955,8 @@ footer {
     flex-direction: column;
     gap: 0px;
   }
-  .skill-content {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .package-name span {
+    font-size: 15px;
   }
 }
 @media (max-width: 450px) {
