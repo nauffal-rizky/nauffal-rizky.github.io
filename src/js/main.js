@@ -129,6 +129,21 @@ refreshInput.addEventListener('click', () => {
   });
 });
 
+const goToWhatsapp = () => {
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+
+  const url = `https://wa.me/+6287825000868?text=Name: ${username}%0aPhone: ${phone}%0aEmail: ${email}`;
+  window.open(url, '_blank').focus();
+};
+
+const form = document.querySelector('.form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  goToWhatsapp();
+});
+
 const date = document.getElementById('date');
 const timeNow = new Date().getFullYear();
 date.textContent = timeNow;

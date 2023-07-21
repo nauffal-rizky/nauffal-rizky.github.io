@@ -371,6 +371,9 @@ footer span a:hover::after {
   transition: all 0.3s ease;
   overflow: hidden;
 }
+.description a {
+  color: var(--color-b2);
+}
 .detail-desc {
   transition: 0.3s;
 }
