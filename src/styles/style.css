@@ -43,7 +43,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.navbar {
+nav-bar {
   position: fixed;
   left: 0;
   right: 0;
@@ -58,141 +58,10 @@ header {
 .fixed {
   background-color: var(--color-b1);
 }
-.toggle-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 55%;
-}
-.section-center,
-.social-center {
-  gap: 15px;
-}
-.section-center,
-.social-center,
-.section-footer,
-.social-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-title a {
-  font-size: 30px;
-}
-.section-center li a,
-.section-footer li a {
-  text-transform: capitalize;
-}
-.section-center li a,
-.social-center li a,
-.social-footer li a {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-}
-.header-title a,
-.social-center li a,
-.section-center li a,
-.section-footer li a,
-.social-footer li a {
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-}
-.header-title a::after,
-.section-center li a::after,
-.section-footer li a::after,
-.services-container .row::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1.5px solid #fff;
-  transform: scaleX(0);
-  transition: 0.3s;
-}
-.header-title a:hover::after,
-.section-center li a:hover::after,
-.section-footer li a:hover::after,
-.services-container .row:hover::after {
-  transform: scaleX(0.5);
-}
-.navToggle {
-  display: none;
-  background-color: transparent;
-  color: #fff;
-  font-size: 40px;
-  border: none;
-  transition: all 0.3s ease;
-}
-.navToggle.flip,
 .skillToggle.flip {
   transform: scale(-1);
 }
 
-.social-center li a svg {
-  transition: all 0.3s ease;
-}
-.social-center li a svg:hover,
-.social-footer li a svg:hover {
-  transform: scale(1.5);
-}
-
-.jumbotron {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
-.jumbotron-content {
-  margin: 0 0 0 80px;
-}
-.jumbotron-content .text1,
-.jumbotron-content .text2,
-.jumbotron-content .text3,
-.jumbotron-content .text4 {
-  font-family: 'Roboto', 'Arial', sans-serif;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000;
-}
-.jumbotron-content .text1 {
-  font-size: 50px;
-}
-.jumbotron-content .text2 {
-  font-size: 55px;
-}
-.jumbotron-content .text2 a,
-footer span a {
-  position: relative;
-  color: var(--color-b2);
-}
-.jumbotron-content .text2 a::after,
-footer span a::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1.5px solid var(--color-b2);
-  transform: scaleX(0);
-  transition: 0.3s;
-}
-.jumbotron-content .text2 a:hover::after,
-footer span a:hover::after {
-  transform: scaleX(1);
-}
-.jumbotron-content .text3 {
-  font-size: 45px;
-}
-.jumbotron-content .text4 {
-  font-size: 16px;
-  margin: 20px 0;
-}
-.jumbotron-content .text4 span {
-  font-size: 20px;
-}
 .btn {
   display: inline-block;
   font-size: 18px;
@@ -381,7 +250,6 @@ footer span a:hover::after {
   padding: 5px 0;
 }
 
-.explore-btn,
 .cv-btn,
 .desc-btn,
 .submit-btn {
@@ -389,7 +257,6 @@ footer span a:hover::after {
   color: var(--color-b2);
   border: 2px solid var(--color-b2);
 }
-.explore-btn:hover,
 .cv-btn:hover,
 .desc-btn:hover,
 .submit-btn:hover {
@@ -510,7 +377,6 @@ footer span a:hover::after {
   margin: 0 0 50px 0;
 }
 .services-container .row {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -520,7 +386,23 @@ footer span a:hover::after {
 .services-container .row::after {
   border-bottom: 3px solid var(--color-b2);
 }
-.services-container .row img {
+.services-container .row::after,
+.section-footer li a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1.5px solid #fff;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+.services-container .row:hover::after,
+.section-footer li a:hover::after {
+  transform: scaleX(0.5);
+}
+.service-img {
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -528,6 +410,10 @@ footer span a:hover::after {
   padding: 5px;
   border: 2px solid var(--color-b2);
   border-radius: 5px;
+  transition: 0.3s;
+}
+.service-img:hover {
+  padding: 10px;
 }
 .services-container .row .name {
   color: var(--color-b3);
@@ -640,7 +526,6 @@ footer span a:hover::after {
 .contact {
   background-color: rgb(0, 0, 0, 0.2);
   background-image: url('../assets/light-bulb.jpg');
-  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
 }
@@ -668,7 +553,8 @@ footer span a:hover::after {
 .desc-contact,
 .info {
   color: #fff;
-  text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+  /* text-shadow: 2px 2px 4px rgb(0 0 0 / 20%); */
+  text-shadow: 2px 2px 4px #000;
 }
 .desc-contact {
   margin: 5px 0 20px 0;
@@ -725,6 +611,7 @@ form.form {
   padding: 15px;
   border: none;
   border-bottom: 2px solid var(--color-b2);
+  border-radius: 5px;
   outline: none;
 }
 .input-box input::placeholder {
@@ -764,6 +651,24 @@ footer {
   font-family: 'Poppins', sans-serif;
   padding: 20px 0;
 }
+footer span a {
+  position: relative;
+  color: var(--color-b2);
+}
+footer span a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1.5px solid var(--color-b2);
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+footer span a:hover::after {
+  transform: scaleX(1);
+}
 .footer-toggle {
   display: flex;
   flex-direction: column;
@@ -772,11 +677,31 @@ footer {
 }
 .section-footer,
 .social-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: fit-content;
   gap: 15px;
 }
 .social-footer li a svg {
   transition: all 0.3s ease;
+}
+.social-footer li a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.section-footer li a {
+  text-transform: capitalize;
+}
+.section-footer li a,
+.social-footer li a {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+.social-footer li a svg:hover {
+  transform: scale(1.5);
 }
 
 /* Breakpoints */
@@ -784,11 +709,6 @@ footer {
   .my-img {
     width: 400px;
     height: 400px;
-  }
-}
-@media (max-width: 1024px) {
-  .toggle-container {
-    width: 62%;
   }
 }
 @media (max-width: 1000px) {
@@ -808,26 +728,8 @@ footer {
   header {
     background-position: center;
   }
-  .navbar {
+  nav-bar {
     padding: 20px 30px;
-  }
-  .section-center li a {
-    font-size: 16px;
-  }
-  .toggle-container {
-    width: 60%;
-  }
-  .jumbotron-content {
-    margin: 0 0 0 30px;
-  }
-  .jumbotron-content .text1 {
-    font-size: 40px;
-  }
-  .jumbotron-content .text2 {
-    font-size: 45px;
-  }
-  .jumbotron-content .text3 {
-    font-size: 35px;
   }
   .contact-form {
     max-width: 100%;
@@ -836,18 +738,6 @@ footer {
   }
 }
 @media (max-width: 768px) {
-  .toggle-container {
-    width: 65%;
-  }
-  .jumbotron-content .text1 {
-    font-size: 30px;
-  }
-  .jumbotron-content .text2 {
-    font-size: 35px;
-  }
-  .jumbotron-content .text3 {
-    font-size: 25px;
-  }
   .about .title,
   .service .title,
   .skills .title,
@@ -885,37 +775,11 @@ footer {
   }
 }
 @media (max-width: 678px) {
-  .navbar {
-    padding: 10px 20px;
-  }
-  .navbar {
+  nav-bar {
     flex-direction: column;
     gap: 0px;
+    padding: 10px 20px;
     overflow-y: hidden;
-  }
-  .header-title {
-    display: flex;
-    justify-content: space-between;
-    min-width: 50vw;
-  }
-  .navToggle {
-    display: block;
-  }
-  .toggle-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0px;
-    width: fit-content;
-    height: 0;
-    transition: all 0.3s ease;
-  }
-  .section-center {
-    width: fit-content;
-    padding: 10px 0 8px 0;
-  }
-  .btn {
-    font-size: 16px;
-    padding: 10px 20px;
   }
   .desc-about {
     font-size: 14px;

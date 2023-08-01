@@ -8,55 +8,15 @@
 
     <!-- Feather -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <a href="#home" class="go-to-up">
       <i data-feather="chevron-up"></i>
     </a>
     <header>
-      <nav class="navbar">
-        <div class="header-title">
-          <a href="#home">nauffal.site</a>
-          <button class="navToggle">
-            <i data-feather="chevron-down"></i>
-          </button>
-        </div>
-        <div class="toggle-container">
-          <ul class="section-center">
-            <li><a href="#about" class="scroll-link">about</a></li>
-            <li><a href="#skills" class="scroll-link">skills</a></li>
-            <li><a href="#service" class="scroll-link">service</a></li>
-            <li><a href="#contact" class="scroll-link">contact</a></li>
-          </ul>
-          <ul class="social-center">
-            <li>
-              <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank" class="linkedin">
-                <i data-feather="linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram">
-                <i data-feather="instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="" target="_blank" class="youtube">
-                <i data-feather="youtube"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="jumbotron">
-        <div class="jumbotron-content">
-          <p class="text1">Hi!,</p>
-          <p class="text2">I'm <a href="https://www.instagram.com/nauffal.code/" target="_blank">Nauffal</a>,</p>
-          <p class="text3">welcome to my website</p>
-          <p class="text4">Me as: <span>Web developer, Web Designer</span></p>
-          <a href="#about" class="explore-btn btn">Explore more...</a>
-        </div>
-      </div>
+      <nav-bar></nav-bar>
+      <jumbo-tron></jumbo-tron>
     </header>
     <main>
       <article class="about" id="about">
@@ -77,9 +37,9 @@
                   I got my opportunity to know about Programming when I attended a computer class on <a href="https://ciptamandiri.net/home/" target="_blank" class="YCM">Yayasan Cipta Mandiri</a>.
                   The place where I discovered my dreams.
                 </p>
-                <a href="../download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
+                <a href="./download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
               </div>
-              <img src="../src/assets/profile-nomask2.JPG" class="my-img"></img>
+              <img src="./assets/profile-nomask2.JPG" class="my-img"></img>
             </div>
           </div>
         </section>
@@ -185,17 +145,17 @@
             <h2 class="h-service">Web Development</h2>
             <div class="services-container">
               <div class="row">
-                <img src="../src/assets/website-4.jpg" alt="service-1" />
+                <img class="service-img" src="./assets/website-4.jpg" alt="service-1" />
                 <h3 class="name">Landing page</h3>
                 <p class="desc-service desc">I offer you the service of creating a simple landing page using simple HTML, CSS, and JavaScript on the landing page.</p>
               </div>
               <div class="row">
-                <img src="../src/assets/website-2.jpg" alt="service-2" />
+                <img class="service-img" src="./assets/website-2.jpg" alt="service-2" />
                 <h3 class="name">Simple Commercial Website</h3>
                 <p class="desc-service desc">I offer you the service of creating a simple commercial website using simple HTML, CSS, and JavaScript.</p>
               </div>
               <div class="row">
-                <img src="../src/assets/coding.jpg" alt="service-3" />
+                <img class="service-img" src="./assets/coding.jpg" alt="service-3" />
                 <h3 class="name">Portfolio Website</h3>
                 <p class="desc-service desc">I offer you the service of creating a portfolio website based on your instructions and desire.</p>
               </div>
@@ -427,6 +387,6 @@
     <script>
       feather.replace();
     </script>
-    <script src="./src/js/main.js"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>
