@@ -1,7 +1,7 @@
 class Jumbotron extends HTMLElement {
   constructor() {
     super();
-    this._shadowRoot = this.attachShadow({ mode: 'open' });
+    this._shadowRoot = this.attachShadow({ mode: 'closed' });
   }
   connectedCallback() {
     this.render();

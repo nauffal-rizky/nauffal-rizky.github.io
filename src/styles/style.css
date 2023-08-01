@@ -73,30 +73,26 @@ nav-bar {
   transition: all 0.3s ease;
 }
 
-.about,
 .service,
 .skills,
 .contact {
   min-height: 600px;
   padding: 80px 0;
 }
-.about .title,
 .service .title,
 .skills .title,
 .contact .title {
   font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
-  font-size: 30px;
   margin: 0 0 50px 0;
 }
-.about .title h1,
 .skills .title h1,
 .service .title h1,
 .contact .title h1 {
   color: var(--color-b3);
+  font-size: 45px;
   margin: 0 0 0 20px;
 }
-.about .title .underline-contain,
 .skills .title .underline-contain,
 .service .title .underline-contain,
 .contact .title .underline-contain {
@@ -104,7 +100,6 @@ nav-bar {
   display: flex;
   align-items: center;
 }
-.about .title .underline-contain .underline,
 .skills .title .underline-contain .underline,
 .service .title .underline-contain .underline,
 .contact .title .underline-contain .underline {
@@ -112,7 +107,6 @@ nav-bar {
   height: 3px;
   background-color: #000;
 }
-.about .title .underline-contain .circle,
 .skills .title .underline-contain .circle,
 .service .title .underline-contain .circle,
 .contact .title .underline-contain .circle {
@@ -130,53 +124,6 @@ nav-bar {
 .service-content {
   width: 90%;
   font-family: 'Poppins', sans-serif;
-}
-.about-content {
-  font-family: 'Poppins', sans-serif;
-}
-.profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-.desc-about {
-  order: 1;
-  width: 45%;
-  line-height: 1.5;
-}
-.desc-about h2 {
-  display: inline;
-  color: var(--color-b2);
-  transition: 0.3s;
-}
-.desc-about h2:hover {
-  letter-spacing: 1.5px;
-}
-.intro-1 {
-  margin: 10px 0 0 0;
-}
-.intro-1 .YCM {
-  color: var(--color-b2);
-}
-.intro-1 .YCM:hover {
-  color: #d65050;
-  text-decoration: underline;
-}
-.cv-btn {
-  display: inline-block;
-}
-.my-img {
-  width: 300px;
-  height: 300px;
-  padding: 5px;
-  border: 2px solid var(--color-b2);
-  border-radius: 5px;
-  object-fit: cover;
-  transition: all 0.2s ease;
-}
-.my-img:hover {
-  padding: 8px;
 }
 
 /* SKILLS */
@@ -250,14 +197,12 @@ nav-bar {
   padding: 5px 0;
 }
 
-.cv-btn,
 .desc-btn,
 .submit-btn {
   background-color: transparent;
   color: var(--color-b2);
   border: 2px solid var(--color-b2);
 }
-.cv-btn:hover,
 .desc-btn:hover,
 .submit-btn:hover {
   background-color: var(--color-b2);
@@ -705,21 +650,7 @@ footer span a:hover::after {
 }
 
 /* Breakpoints */
-@media (min-width: 1440px) {
-  .my-img {
-    width: 400px;
-    height: 400px;
-  }
-}
 @media (max-width: 1000px) {
-  .profile {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .desc-about {
-    max-width: 90%;
-    width: 600px;
-  }
   .services-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
@@ -738,24 +669,14 @@ footer span a:hover::after {
   }
 }
 @media (max-width: 768px) {
-  .about .title,
-  .service .title,
-  .skills .title,
-  .contact .title {
-    font-size: 25px;
-    margin: 0 0 50px 0;
+  .service .title h1,
+  .skills .title h1,
+  .contact .title h1 {
+    font-size: 40px;
   }
-  .about-content {
-    flex-direction: column;
-  }
-  .about .title .underline-contain .underline,
   .skills .title .underline-contain .underline,
   .contact .title .underline-contain .underline {
     width: 225px;
-  }
-  .my-img {
-    width: 300px;
-    height: 250px;
   }
   .package-desc-header h3,
   .package-desc-header span {
@@ -780,9 +701,6 @@ footer span a:hover::after {
     gap: 0px;
     padding: 10px 20px;
     overflow-y: hidden;
-  }
-  .desc-about {
-    font-size: 14px;
   }
   .h-skill,
   .h-contact,
@@ -831,7 +749,6 @@ footer span a:hover::after {
     width: 40px;
     height: 40px;
   }
-  .about .title h1,
   .service .title h1 {
     margin: 0 0 0 15px;
   }
