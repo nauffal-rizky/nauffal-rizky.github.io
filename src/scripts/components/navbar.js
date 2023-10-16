@@ -1,13 +1,13 @@
-import '../view/all.min.js';
+import "../view/all.min.js";
 class Navbar extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    this.render();
-  }
-  render() {
-    this.innerHTML = `
+	constructor() {
+		super();
+	}
+	connectedCallback() {
+		this.render();
+	}
+	render() {
+		this.innerHTML = `
     <style>
       * {
         padding: 0;
@@ -20,7 +20,7 @@ class Navbar extends HTMLElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 55%;
+        width: 62%;
       }
       .section-center,
       .social-center {
@@ -48,10 +48,10 @@ class Navbar extends HTMLElement {
       .social-center li a {
         font-size: 25px;
       }
-      .social-center li a i {
+      .social-center li a svg {
         transition: all 0.3s ease;
       }
-      .social-center li a i:hover {
+      .social-center li a svg:hover {
         transform: scale(1.5);
       }
       .header-title a::after,
@@ -85,15 +85,12 @@ class Navbar extends HTMLElement {
 
       @media (max-width: 1024px) {
         .toggle-container {
-          width: 62%;
+          width: 66%;
         }
       }
       @media (max-width: 900px) {
         .section-center li a {
           font-size: 16px;
-        }
-        .toggle-container {
-          width: 60%;
         }
       }
       @media (max-width: 768px) {
@@ -135,6 +132,7 @@ class Navbar extends HTMLElement {
       <ul class="section-center">
         <li><a href="#about" class="scroll-link">about</a></li>
         <li><a href="#skills" class="scroll-link">skills</a></li>
+        <li><a href="#exp" class="scroll-link">experience</a></li>
         <li><a href="#service" class="scroll-link">service</a></li>
         <li><a href="#contact" class="scroll-link">contact</a></li>
       </ul>
@@ -159,23 +157,23 @@ class Navbar extends HTMLElement {
 
     <script src="https://kit.fontawesome.com/1160dd891b.js" crossorigin="anonymous"></script>
     `;
-    const toggleContain = this.querySelector('.toggle-container');
-    const sectionCenter = this.querySelector('.section-center');
-    const socialCenter = this.querySelector('.social-center');
-    const navToggle = this.querySelector('.navToggle');
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('flip');
+		const toggleContain = this.querySelector(".toggle-container");
+		const sectionCenter = this.querySelector(".section-center");
+		const socialCenter = this.querySelector(".social-center");
+		const navToggle = this.querySelector(".navToggle");
+		navToggle.addEventListener("click", () => {
+			navToggle.classList.toggle("flip");
 
-      const toggleContainHeight = toggleContain.getBoundingClientRect().height;
-      const sectionHeight = sectionCenter.getBoundingClientRect().height;
-      const socialHeight = socialCenter.getBoundingClientRect().height;
+			const toggleContainHeight = toggleContain.getBoundingClientRect().height;
+			const sectionHeight = sectionCenter.getBoundingClientRect().height;
+			const socialHeight = socialCenter.getBoundingClientRect().height;
 
-      if (toggleContainHeight === 0) {
-        toggleContain.style.height = `${sectionHeight + socialHeight}px`;
-      } else {
-        toggleContain.style.height = 0;
-      }
-    });
-  }
+			if (toggleContainHeight === 0) {
+				toggleContain.style.height = `${sectionHeight + socialHeight}px`;
+			} else {
+				toggleContain.style.height = 0;
+			}
+		});
+	}
 }
-customElements.define('nav-bar', Navbar);
+customElements.define("nav-bar", Navbar);

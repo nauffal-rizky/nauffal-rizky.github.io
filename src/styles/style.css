@@ -20,6 +20,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ANIMATIONS */
+@keyframes gelombang {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+}
+
 .go-to-up {
   position: fixed;
   bottom: 25px;
@@ -31,7 +43,8 @@ html {
   font-size: 16px;
   padding: 10px;
   border-radius: 55%;
-  transition: all 0.3s ease-out;
+  z-index: 1;
+  transition: all 0.5s ease-out;
 }
 .show-link {
   right: 25px;
@@ -73,27 +86,34 @@ nav-bar {
   transition: all 0.3s ease;
 }
 
-.service,
 .skills,
+.exp,
+.service,
 .contact {
   min-height: 600px;
   padding: 80px 0;
 }
-.service .title,
 .skills .title,
+.exp .title,
+.service .title,
 .contact .title {
   font-family: 'Roboto', sans-serif;
   text-transform: capitalize;
   margin: 0 0 50px 0;
 }
 .skills .title h1,
+.exp .title h1,
 .service .title h1,
 .contact .title h1 {
   color: var(--color-b3);
   font-size: 45px;
+}
+.exp .title h1,
+.contact .title h1 {
   margin: 0 0 0 20px;
 }
 .skills .title .underline-contain,
+.exp .title .underline-contain,
 .service .title .underline-contain,
 .contact .title .underline-contain {
   position: relative;
@@ -101,6 +121,7 @@ nav-bar {
   align-items: center;
 }
 .skills .title .underline-contain .underline,
+.exp .title .underline-contain .underline,
 .service .title .underline-contain .underline,
 .contact .title .underline-contain .underline {
   width: 400px;
@@ -108,6 +129,7 @@ nav-bar {
   background-color: #000;
 }
 .skills .title .underline-contain .circle,
+.exp .title .underline-contain .circle,
 .service .title .underline-contain .circle,
 .contact .title .underline-contain .circle {
   width: 20px;
@@ -128,12 +150,12 @@ nav-bar {
 
 /* SKILLS */
 .skills {
-  background-image: url('../assets/light-bulb-2.jpg');
+  background-image: url('../assets/work.jpg');
   background-size: cover;
   background-position: center;
 }
 .skills .title h1,
-.contact .title h1 {
+.service .title h1 {
   text-align: end;
   margin: 0 20px 0 0;
 }
@@ -142,169 +164,205 @@ nav-bar {
   color: var(--color-b4);
 }
 .skills .title .underline-contain,
-.contact .title .underline-contain {
+.service .title .underline-contain {
   justify-content: flex-end;
 }
 .skills .title .underline-contain .underline,
+.exp .title .underline-contain .underline,
 .contact .title .underline-contain .underline {
   background-color: #fff;
 }
 .skills .title .underline-contain .circle,
+.exp .title .underline-contain .circle,
 .contact .title .underline-contain .circle {
   border: 2px solid #fff;
 }
 .skill-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   max-width: 90%;
   width: 600px;
   font-family: 'Poppins', sans-serif;
 }
-@media (min-width: 1057px) {
-  .skill-content {
-    display: flex;
-    flex-direction: row;
-    width: 1200px;
-  }
-}
-
-.skill-exp {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 8px 16px;
-  border-radius: 5px;
-  overflow-y: hidden;
-}
-.h-skill {
-  display: inline-block;
-  background-color: var(--color-b1);
-  color: #fff;
-  padding: 0 5px;
-}
-.description {
-  margin: 10px 0 0 0;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-.description a {
-  color: var(--color-b2);
-}
-.detail-desc {
-  transition: 0.3s;
-}
-.detail-desc p:first-child {
-  padding: 5px 0;
-}
-
-.desc-btn,
-.submit-btn {
-  background-color: transparent;
-  color: var(--color-b2);
-  border: 2px solid var(--color-b2);
-}
-.desc-btn:hover,
-.submit-btn:hover {
-  background-color: var(--color-b2);
-  color: #fff;
-}
-.skills-graph {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: rgba(4, 28, 50, 0.8);
-  font-family: 'Roboto', sans-serif;
-  padding: 6px 12px 10px;
-  border-radius: 5px;
-}
-.graph {
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.header-graph {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  color: #fff;
-  margin: 5px 0 0 5px;
-}
-.graph-name {
+.skill-carousel {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 20px;
 }
-.graph-name a {
-  position: relative;
+.skill-carousel span {
   color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+  padding: 10px 16px;
+  border: 1.5px solid var(--color-b1);
+  border-radius: 5px;
+  box-shadow: 0.5px 1px 1px #000;
   cursor: pointer;
-}
-.graph-name a::after {
-  position: absolute;
-  content: '';
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 100%;
-  border-bottom: 1.5px solid #fff;
   transition: 0.3s;
 }
-.graph-name a:hover::after {
-  right: 0%;
+.skill-carousel span:hover,
+.skill-carousel span.active {
+  background-color: var(--color-b1);
+  color: var(--color-b2);
+  text-shadow: none;
 }
-.skillToggle {
-  transition: all 0.3s ease;
-}
-.line {
-  position: relative;
-  width: 100%;
-  height: 5px;
-  background-color: #ddd;
-  margin: 5px 0 0 0;
+.skill-detail {
+  display: none;
+  background-color: var(--color-b3);
+  padding: 10px 14px;
   border-radius: 5px;
 }
-.line::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.skill-detail.active {
+  display: block;
+}
+.skill-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  margin: 0px 0px 10px 0px;
+}
+.skill-header abbr a,
+.skill-header a {
+  color: var(--color-b2);
+  font-size: 24px;
+}
+.img-link {
+  display: flex;
+}
+.skill-header img {
+  width: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.skill-header img:hover {
+  width: 50px;
+}
+.skill-header abbr a {
+  transition: 0.3s;
+}
+.skill-detail p {
+  background-color: #fff;
+  color: #111;
+  font-family: 'Arial', sans-serif;
+  text-align: justify;
+  padding: 10px;
   border-radius: 5px;
 }
-.line.html:before {
-  width: 95%;
-  background-color: #e34c26;
+.skill-detail#html .skill-header a:hover ~ abbr a,
+.skill-detail#html .skill-header a:hover ~ a {
+  transition: 0.3s;
 }
-.line.css:before {
-  width: 90%;
-  background-color: #2965f1;
+.skill-detail#html .skill-header a:hover ~ abbr a {
+  color: #f16529;
 }
-.line.javascript:before {
-  width: 80%;
-  background-color: #f0db4f;
+.skill-detail#css .skill-header a:hover ~ abbr a {
+  color: #039be5;
 }
-.line.php:before {
-  width: 60%;
-  background-color: #474a8a;
+.skill-detail#javascript .skill-header a:hover ~ a {
+  color: #ffd600;
 }
-.skill-dropdown {
-  height: 0;
-  transition: all 0.3s ease;
+.skill-detail#php .skill-header a:hover ~ a {
+  color: #dcd5f2;
 }
 
-.desc-graph {
-  background-color: #fff;
-  color: var(--color-b1);
-  font-family: 'Open Sans', sans-serif;
-  text-align: justify;
-  line-height: 1.5;
-  padding: 10px;
-  margin: 10px 0 0 0;
+/* EXPERIENCE */
+.exp {
+  background-color: var(--color-b3);
 }
-.desc-graph abbr,
-.desc-graph a {
+.exp .title h1 {
+  color: var(--color-b4);
+}
+.exp-center {
+  display: flex;
+  justify-content: center;
+}
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 1200px;
+  max-width: 90%;
+}
+.exp-header {
+  width: 350px;
+  color: #ddd;
+  text-align: center;
+}
+.exp-header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin: 0px 0px 10px 0px;
+}
+.exp-header p {
+  font-family: 'Roboto', sans-serif;
+}
+.exp-content > h1,
+.exp-content > p {
+  text-align: center;
+}
+.experiences {
+  display: grid;
+  grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
+  gap: 20px;
+}
+.experiences .row {
+  background-color: #fff;
+  padding: 0px 0px 20px 0px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.experiences .row:hover {
+  transform: scale(1.05);
+}
+.row:nth-child(1) .thumb-img {
+  width: 100%;
+  height: 300px;
+  background-image: url(../assets/tictactoe-sc.png);
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.row:nth-child(2) .thumb-img {
+  width: 100%;
+  height: 300px;
+  background-image: url(../assets/snakegame-sc.png);
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.row:nth-child(3) .thumb-img {
+  width: 100%;
+  height: 300px;
+  background-image: url(../assets/memorycardgame-sc.png);
+  background-position: top;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.experiences .row h1 {
   color: var(--color-b2);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0px 5px 0px;
+  transition: 0.3s;
+}
+.experiences .row:hover h1 {
+  letter-spacing: 0.5px;
+}
+.experiences .row p {
+  width: 90%;
+  font-family: 'Open sans', sans-serif;
+  text-align: justify;
+  margin: 0 auto;
 }
 
 /* SERVICE */
@@ -315,6 +373,10 @@ nav-bar {
   font-family: 'Poppins', sans-serif;
   margin: 0 0 20px 0;
 }
+.h-service:hover span {
+  animation: gelombang 0.7s;
+  animation-delay: calc(0.1s * var(--i));
+}
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -322,14 +384,11 @@ nav-bar {
   margin: 0 0 50px 0;
 }
 .services-container .row {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 0 20px 0;
-  gap: 15px;
-}
-.services-container .row::after {
-  border-bottom: 3px solid var(--color-b2);
 }
 .services-container .row::after,
 .section-footer li a::after {
@@ -343,6 +402,9 @@ nav-bar {
   transform: scaleX(0);
   transition: 0.3s;
 }
+.services-container .row::after {
+  border-bottom: 2px solid var(--color-b2);
+}
 .services-container .row:hover::after,
 .section-footer li a:hover::after {
   transform: scaleX(0.5);
@@ -350,18 +412,27 @@ nav-bar {
 .service-img {
   width: 300px;
   height: 300px;
+  border: 2px solid var(--color-b2);
+  padding: 5px;
+  border-radius: 5px;
+}
+.service-img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: bottom;
-  padding: 5px;
-  border: 2px solid var(--color-b2);
-  border-radius: 5px;
   transition: 0.3s;
 }
-.service-img:hover {
-  padding: 10px;
+.services-container .row:hover .service-img img {
+  transform: scale(0.95) rotate(3deg);
 }
 .services-container .row .name {
   color: var(--color-b3);
+  margin: 10px 0px;
+  transition: 0.3s;
+}
+.services-container .row:hover .name {
+  letter-spacing: 0.7px;
 }
 .desc-service {
   width: 90%;
@@ -427,7 +498,7 @@ nav-bar {
 .package-desc p {
   color: #62646a;
   font-family: 'Arial', sans-serif;
-  margin: 10px 0px 20px 0px;
+  margin: 5px 0px 10px 0px;
 }
 .delivery-revision {
   display: flex;
@@ -458,6 +529,11 @@ nav-bar {
   gap: 5px;
   font-size: 14px;
 }
+
+.package-table .package-desc:nth-child(1) .package-benefits .row:nth-child(1) svg {
+  color: #ccc;
+}
+
 .package-benefits .row svg {
   width: 20px;
   color: limegreen;
@@ -545,9 +621,7 @@ nav-bar {
 form.form {
   display: flex;
   flex-direction: column;
-}
-.input-box {
-  margin: 10px 0;
+  gap: 10px;
 }
 .input-box input {
   width: 100%;
@@ -562,15 +636,77 @@ form.form {
 .input-box input::placeholder {
   color: #fff;
 }
+.dropdown-box {
+  width: 50%;
+  background-color: var(--color-b2);
+}
+.selected-service {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid var(--color-b3);
+}
+.selected-service input {
+  width: 100%;
+  background-color: #fff;
+  color: var(--color-b3);
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  padding: 10px;
+  outline: none;
+  cursor: default;
+}
+.dropdown-btn {
+  background-color: transparent;
+  color: var(--color-b3);
+  font-size: 16px;
+  padding: 0px 5px 0px 10px;
+  border: none;
+  cursor: pointer;
+}
+.options {
+  height: 0;
+  overflow-y: hidden;
+  transition: 0.3s;
+}
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+.options-container span {
+  width: 100%;
+  background-color: #fafafa;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 7px 0px;
+  border: 1px solid #dadbdd;
+  cursor: pointer;
+}
+.options-container span:nth-child(even) {
+  border-top: none;
+  border-bottom: none;
+}
 .actions {
   display: grid;
   grid-template-columns: 88% 10%;
   justify-content: space-between;
 }
+.submit-btn {
+  background-color: transparent;
+  color: var(--color-b2);
+  border: 2px solid var(--color-b2);
+}
+.submit-btn:hover {
+  background-color: var(--color-b2);
+  color: #fff;
+}
 .submit-btn,
 .refresh-btn {
   text-transform: capitalize;
   padding: 10px 0;
+  margin: 0px 0px 0px 0px;
 }
 .refresh-btn {
   display: flex;
@@ -668,15 +804,37 @@ footer span a:hover::after {
     margin: 0 auto;
   }
 }
+@media (max-width: 800px) {
+  .exp-content {
+    width: 500px;
+    max-width: 90%;
+  }
+  .exp-header h1 {
+    font-size: 18px;
+  }
+  .exp-header {
+  }
+  .experiences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  .experiences .row img {
+    height: 250px;
+  }
+}
 @media (max-width: 768px) {
   .service .title h1,
   .skills .title h1,
+  .exp .title h1,
   .contact .title h1 {
     font-size: 40px;
   }
+  .about .title .underline-contain .underline,
   .skills .title .underline-contain .underline,
+  .exp .title .underline-contain .underline,
+  .service .title .underline-contain .underline,
   .contact .title .underline-contain .underline {
-    width: 225px;
+    width: 250px;
   }
   .package-desc-header h3,
   .package-desc-header span {
@@ -691,8 +849,30 @@ footer span a:hover::after {
   }
 }
 @media (max-width: 705px) {
+  .h-service {
+    font-size: 22px;
+  }
   .desc-service {
     width: 80%;
+  }
+  .skill-carousel span {
+    font-size: 18px;
+    padding: 8px 14px;
+  }
+  .skill-header {
+    margin: 0px 0px 5px 0px;
+  }
+  .skill-header a {
+    font-size: 22px;
+  }
+  .skill-header img {
+    width: 35px;
+  }
+  .skill-header img:hover {
+    width: 45px;
+  }
+  .skill-detail p {
+    font-size: 14px;
   }
 }
 @media (max-width: 678px) {
@@ -749,20 +929,17 @@ footer span a:hover::after {
     width: 40px;
     height: 40px;
   }
-  .service .title h1 {
+  .contact .title h1 {
     margin: 0 0 0 15px;
   }
   .skills .title h1,
-  .contact .title h1 {
+  .service .title h1 {
     margin: 0 15px 0 0;
-  }
-  .service .title .underline-contain .underline {
-    width: 350px;
   }
   .contact-content {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  .services-container .row img {
+  .service-img {
     width: 250px;
     height: 250px;
   }

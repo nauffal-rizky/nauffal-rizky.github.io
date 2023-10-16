@@ -65,18 +65,17 @@ class AboutCenter extends HTMLElement {
       .desc-about h2 {
         display: inline;
         color: var(--color-b2);
+        letter-spacing: 1px;
         transition: 0.3s;
       }
-      .desc-about h2:hover {
-        letter-spacing: 1.5px;
-      }
-      .intro-1 {
+      .intro {
+        font-family: "Open-sans", sans-serif;
         margin: 10px 0 0 0;
       }
-      .intro-1 .YCM {
+      .intro .YCM {
         color: var(--color-b2);
       }
-      .intro-1 .YCM:hover {
+      .intro .YCM:hover {
         color: #d65050;
         text-decoration: underline;
       }
@@ -84,16 +83,20 @@ class AboutCenter extends HTMLElement {
         display: inline-block;
       }
       .my-img {
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
         padding: 5px;
         border: 2px solid var(--color-b2);
         border-radius: 5px;
+      }
+      .my-img img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         transition: all 0.2s ease;
       }
-      .my-img:hover {
-        padding: 8px;
+      .my-img:hover img {
+        transform: scale(0.95) rotate(3deg);
       }
       .cv-btn {
         display: inline-block;
@@ -113,12 +116,6 @@ class AboutCenter extends HTMLElement {
         color: #fff;
       }
 
-      @media (max-width: 1440px) {
-        .my-img {
-          width: 400px;
-          height: 400px;
-        }
-      }
       @media (max-width: 1000px) {
         .profile {
           flex-direction: column;
@@ -141,7 +138,7 @@ class AboutCenter extends HTMLElement {
         }
         .my-img {
           width: 300px;
-          height: 250px;
+          height: 300px;
         }
       }
       @media (max-width: 678px) {
@@ -169,14 +166,14 @@ class AboutCenter extends HTMLElement {
           <div class="profile">
             <div class="desc-about desc">
               <h2>Introduction</h2>
-              <p class="intro-1">
-                Hi, my name is Nauffal. I'm from Bogor, Indonesia. I got intrigued by programming and started studying web development and then regularly practice my skills by doing several projects.
-                I got my opportunity to know about Programming when I attended a computer class on <a href="https://ciptamandiri.net/home/" target="_blank" class="YCM">Yayasan Cipta Mandiri</a>.
-                The place where I discovered my dreams.
+              <p class="intro">
+                Hi.!! I'm Nauffal experienced in Web Development included HTML, CSS, Javascript, and many more. Proficient in website development, such as company profile website, commercial website, web applications, etc. When I first intrigued in programming I started learned about HTML, since then I keep learning about other programming language, framework, and library to improve my skills
               </p>
               <a href="./src/download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
             </div>
-            <img src="./src/assets/profile-nomask2.JPG" class="my-img"></img>
+            <div class="my-img">
+              <img src="./src/assets/profile-nomask2.JPG"></img>
+            </div>
           </div>
         </div>
       </section>

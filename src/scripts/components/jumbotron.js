@@ -20,6 +20,18 @@ class Jumbotron extends HTMLElement {
         align-items: center;
         height: 100vh;
       }
+
+      @keyframes wavy {
+        0%,
+        40%,
+        100% {
+          transform: translateY(0px);
+        }
+        20% {
+          transform: translateY(-20px);
+        }
+      }
+
       .jumbotron-content {
         margin: 0 0 0 80px;
       }
@@ -40,6 +52,13 @@ class Jumbotron extends HTMLElement {
       .jumbotron-content .text2 a {
         position: relative;
         color: var(--color-b2);
+        transition: 0.3s;
+      }
+      .jumbotron-content .text2 a:hover span {
+        position: relative;
+        display: inline-block;
+        animation: wavy .7s;
+        animation-delay: calc(.1s * var(--i));
       }
       .jumbotron-content .text2 a::after {
         content: '';
@@ -118,7 +137,7 @@ class Jumbotron extends HTMLElement {
 
     <div class="jumbotron-content">
       <p class="text1">Hi!,</p>
-      <p class="text2">I'm <a href="https://www.instagram.com/nauffal.code/" target="_blank">Nauffal</a>,</p>
+      <p class="text2">I'm <a href="https://www.instagram.com/nauffal.code/" target="_blank"><span style="--i:1">N</span><span style="--i:2">a</span><span style="--i:3">u</span><span style="--i:4">f</span><span style="--i:5">f</span><span style="--i:6">a</span><span style="--i:7">l</span></a>,</p>
       <p class="text3">welcome to my website</p>
       <p class="text4">Me as: <span>Web developer, Web Designer</span></p>
       <a href="#about" class="explore-btn btn">Explore more...</a>

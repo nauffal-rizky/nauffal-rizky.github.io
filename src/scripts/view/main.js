@@ -1,153 +1,135 @@
 const main = () => {
-  // DOMContentLoaded
-  window.addEventListener('DOMContentLoaded', () => {
-    desc.style.height = `${simpleDescHeight}px`;
-  });
+	// SCROLL
+	const nav = document.querySelector("nav-bar");
+	const goToUp = document.querySelector(".go-to-up");
+	window.addEventListener("scroll", () => {
+		const scrollHeight = window.pageYOffset;
 
-  // SCROLL
-  const nav = document.querySelector('nav-bar');
-  const goToUp = document.querySelector('.go-to-up');
-  window.addEventListener('scroll', () => {
-    const scrollHeight = window.pageYOffset;
+		if (scrollHeight > 0) {
+			nav.classList.add("fixed");
+		} else {
+			nav.classList.remove("fixed");
+		}
 
-    if (scrollHeight > 0) {
-      nav.classList.add('fixed');
-    } else {
-      nav.classList.remove('fixed');
-    }
+		if (scrollHeight > 500) {
+			goToUp.classList.add("show-link");
+		} else {
+			goToUp.classList.remove("show-link");
+		}
+	});
+	const scrollLinks = document.querySelectorAll(".scroll-link");
+	scrollLinks.forEach((link) => {
+		link.addEventListener("click", () => {
+			toggleContain.style.height = 0;
+		});
+	});
 
-    if (scrollHeight > 500) {
-      goToUp.classList.add('show-link');
-    } else {
-      goToUp.classList.remove('show-link');
-    }
-  });
-  const scrollLinks = document.querySelectorAll('.scroll-link');
-  scrollLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      toggleContain.style.height = 0;
-    });
-  });
+	// SKILLS
+	const skillsContain = document.querySelector(".skill-carousel");
+	const skillBtns = skillsContain.querySelectorAll("span");
+	const skillDetail = document.querySelectorAll(".skill-detail");
+	skillsContain.addEventListener("click", (e) => {
+		const IDs = e.target.dataset.id;
+		if (IDs) {
+			skillBtns.forEach((btn) => {
+				btn.classList.remove("active");
+				e.target.classList.add("active");
+			});
 
-  /* NAVBAR
-  const toggleContain = document.querySelector('.toggle-container');
-  const sectionCenter = document.querySelector('.section-center');
-  const socialCenter = document.querySelector('.social-center');
-  const navToggle = document.querySelector('.navToggle');
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('flip');
+			skillDetail.forEach((detail) => {
+				detail.classList.remove("active");
 
-    const toggleContainHeight = toggleContain.getBoundingClientRect().height;
-    const sectionHeight = sectionCenter.getBoundingClientRect().height;
-    const socialHeight = socialCenter.getBoundingClientRect().height;
-    
-    if (toggleContainHeight === 0) {
-      toggleContain.style.height = `${sectionHeight + socialHeight}px`;
-    } else {
-      toggleContain.style.height = 0;
-    }
-  });
-  */
+				const currentTarget = document.getElementById(IDs);
+				currentTarget.classList.add("active");
+			});
+		}
+	});
 
-  // SKILLS
-  const desc = document.querySelector('.description');
-  const simpleDesc = desc.querySelector('.simple-desc');
-  const simpleDescHeight = simpleDesc.getBoundingClientRect().height;
+	// SERVICE
+	const btnContain = document.querySelector(".package-name");
+	const btns = document.querySelectorAll(".package-name span");
+	const contents = document.querySelectorAll(".package-desc");
 
-  const detailDesc = desc.querySelector('.detail-desc');
-  const detailDescHeight = detailDesc.getBoundingClientRect().height;
+	btnContain.addEventListener("click", (e) => {
+		const IDs = e.target.dataset.id;
 
-  const descBtn = document.querySelector('.desc-btn');
-  descBtn.addEventListener('click', () => {
-    if (descBtn.innerText === `Read less...`) {
-      desc.style.height = `${simpleDescHeight}px`;
-      descBtn.innerText = `Read details...`;
-    } else {
-      desc.style.height = `${simpleDescHeight + detailDescHeight}px`;
-      descBtn.innerText = `Read less...`;
-    }
-  });
+		if (IDs) {
+			btns.forEach((btn) => {
+				btn.classList.remove("active");
+				e.target.classList.add("active");
+			});
 
-  // SKILLS-DROPDOWN
-  const graphs = document.querySelectorAll('.graph');
-  graphs.forEach((graph) => {
-    const skillToggle = graph.querySelector('.skillToggle');
-    skillToggle.addEventListener('click', () => {
-      const dropdown = graph.querySelector('.skill-dropdown');
-      const skillDropdownHeight = dropdown.querySelector('p').getBoundingClientRect().height;
+			contents.forEach((content) => {
+				content.classList.remove("active");
 
-      graph.classList.toggle('show');
+				const currentTarget = document.getElementById(IDs);
+				currentTarget.classList.add("active");
+			});
+		}
+	});
 
-      graphs.forEach((item) => {
-        if (item !== graph) {
-          item.classList.remove('show');
+	// CONTACT
+	const selectedServiceDisplay = document.querySelector("#selectedService");
+	const dropdownBtn = document.querySelector(".dropdown-btn");
+	const optionService = document.querySelector(".options");
+	const opSerCon = document.querySelector(".options-container");
 
-          const dropdownItem = item.querySelector('.skill-dropdown');
-          const skillToggleItem = item.querySelector('.skillToggle');
-          dropdownItem.style.height = 0;
-          skillToggleItem.classList.remove('flip');
-        }
-      });
+	const services = document.querySelectorAll(".name");
+	services.forEach((service) => {
+		const value = service.textContent;
+		const serviceSpan = document.createElement("span");
+		serviceSpan.textContent = value;
+		opSerCon.appendChild(serviceSpan);
 
-      if (graph.classList.contains('show')) {
-        dropdown.style.height = `${skillDropdownHeight}px`;
-        skillToggle.classList.add('flip');
-      } else {
-        dropdown.style.height = 0;
-        skillToggle.classList.remove('flip');
-      }
-    });
-  });
+		serviceSpan.addEventListener("click", (e) => {
+			const clicked = e.target.textContent;
+			selectedServiceDisplay.value = clicked;
+			optionService.style.height = 0;
+		});
+	});
 
-  // SERVICE
-  const btnContain = document.querySelector('.package-name');
-  const btns = document.querySelectorAll('.package-name span');
-  const contents = document.querySelectorAll('.package-desc');
+	[selectedServiceDisplay, dropdownBtn].forEach((element) => {
+		element.addEventListener("click", () => {
+			const optionsContactHeight = optionService.getBoundingClientRect().height;
+			const opSerConHei = opSerCon.getBoundingClientRect().height;
 
-  btnContain.addEventListener('click', (e) => {
-    const IDs = e.target.dataset.id;
+			if (optionsContactHeight !== 0) {
+				optionService.style.height = 0;
+			} else {
+				optionService.style.height = `${opSerConHei}px`;
+			}
+		});
+	});
 
-    if (IDs) {
-      btns.forEach((btn) => {
-        btn.classList.remove('active');
-        e.target.classList.add('active');
-      });
+	selectedServiceDisplay.addEventListener("click", () => {
+		selectedServiceDisplay.value = "Service...";
+	});
 
-      contents.forEach((content) => {
-        content.classList.remove('active');
+	const refreshInput = document.querySelector(".refresh-btn");
+	refreshInput.addEventListener("click", () => {
+		const inputs = document.querySelectorAll(".input");
+		inputs.forEach((input) => {
+			input.value = ``;
+		});
+	});
 
-        const currentTarget = document.getElementById(IDs);
-        currentTarget.classList.add('active');
-      });
-    }
-  });
+	const goToWhatsapp = () => {
+		const username = document.getElementById("username").value;
+		const email = document.getElementById("email").value;
+		const phone = document.getElementById("phone").value;
 
-  // CONTACT
-  const refreshInput = document.querySelector('.refresh-btn');
-  refreshInput.addEventListener('click', () => {
-    const inputs = document.querySelectorAll('.input');
-    inputs.forEach((input) => {
-      input.value = ``;
-    });
-  });
+		const url = `https://wa.me/+6287825000868?text=Name: ${username}%0aPhone: ${phone}%0aEmail: ${email}%0aService: Please make ${selectedServiceDisplay.value} for me!`;
+		window.open(url, "_blank").focus();
+	};
 
-  const goToWhatsapp = () => {
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+	const form = document.querySelector(".form");
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+		goToWhatsapp();
+	});
 
-    const url = `https://wa.me/+6287825000868?text=Name: ${username}%0aPhone: ${phone}%0aEmail: ${email}`;
-    window.open(url, '_blank').focus();
-  };
-
-  const form = document.querySelector('.form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    goToWhatsapp();
-  });
-
-  const date = document.getElementById('date');
-  const timeNow = new Date().getFullYear();
-  date.textContent = timeNow;
+	const date = document.getElementById("date");
+	const timeNow = new Date().getFullYear();
+	date.textContent = timeNow;
 };
 export default main;
