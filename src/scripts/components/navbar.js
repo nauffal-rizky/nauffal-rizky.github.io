@@ -85,24 +85,37 @@ class Navbar extends HTMLElement {
 
       @media (max-width: 1024px) {
         .toggle-container {
-          width: 66%;
+          width: 68%;
         }
       }
       @media (max-width: 900px) {
+        .header-title a{
+          font-size: 28px;
+        }
         .section-center li a {
           font-size: 16px;
         }
       }
       @media (max-width: 768px) {
+        .social-center {
+          display: none;
+        }
         .toggle-container {
-          width: 65%;
+          width: fit-content;
         }
       }
-      @media (max-width: 678px) {
+      @media (max-width: 600px) {
         .header-title {
           display: flex;
           justify-content: space-between;
-          min-width: 50vw;
+          min-width: 35vw;
+          gap: 10px;
+        }
+        .header-title a {
+          font-size: 26px;
+        }
+        .social-center {
+          display: flex;
         }
         .navToggle {
           display: block;
