@@ -70,18 +70,18 @@ class Navbar extends HTMLElement {
       .section-center li a:hover::after {
         transform: scaleX(0.5);
       }
-      .navToggle {
-        display: none;
-        background-color: transparent;
-        color: #fff;
-        font-size: 20px;
-        border: none;
-        transition: all 0.3s ease;
-      }
-      .navToggle.flip,
-      .skillToggle.flip {
-        transform: scale(-1);
-      }
+        .navToggle {
+          display: none;
+          background-color: transparent;
+          color: #fff;
+          font-size: 20px;
+          border: none;
+          transition: all 0.3s ease;
+        }
+        .navToggle.flip,
+        .skillToggle.flip {
+          transform: scale(-1);
+        }
 
       @media (max-width: 1024px) {
         .toggle-container {
@@ -89,7 +89,7 @@ class Navbar extends HTMLElement {
         }
       }
       @media (max-width: 900px) {
-        .header-title a{
+        .header-title a {
           font-size: 28px;
         }
         .section-center li a {

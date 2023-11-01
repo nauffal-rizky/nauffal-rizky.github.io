@@ -126,11 +126,11 @@ class Jumbotron extends HTMLElement {
         .jumbotron-content .text3 {
           font-size: 25px;
         }
-        @media (max-width: 678px) {
-          .explore-btn {
-            font-size: 16px;
-            padding: 10px 20px;
-          }
+      }
+      @media (max-width: 678px) {
+        .explore-btn {
+          font-size: 16px;
+          padding: 10px 20px;
         }
       }
     </style>

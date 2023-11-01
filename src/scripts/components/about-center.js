@@ -79,9 +79,6 @@ class AboutCenter extends HTMLElement {
         color: #d65050;
         text-decoration: underline;
       }
-      .cv-btn {
-        display: inline-block;
-      }
       .my-img {
         width: 350px;
         height: 350px;
@@ -100,20 +97,20 @@ class AboutCenter extends HTMLElement {
       }
       .cv-btn {
         display: inline-block;
-        background-color: transparent;
-        color: var(--color-b2);
+        background-color: var(--color-b3);
+        color: #fff;
         font-size: 18px;
         font-family: 'Arial', sans-serif;
         padding: 15px 25px;
         margin: 15px 0 0 0;
-        border: 2px solid var(--color-b2);
+        border: 2px solid var(--color-b3);
         border-radius: 5px;
         cursor: pointer;
         transition: all 0.3s ease;
       }
       .cv-btn:hover {
-        background-color: var(--color-b2);
-        color: #fff;
+        background-color: transparent;
+        color: var(--color-b3);
       }
 
       @media (max-width: 1000px) {
