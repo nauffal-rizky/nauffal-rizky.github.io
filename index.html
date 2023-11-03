@@ -30,17 +30,25 @@
         </div>
         <section class="skill-center">
           <div class="skill-carousel">
-            <span class="active" data-id="html">HTML</span>
-            <div class="css-skills">
-              <span data-id="css">CSS</span>
-              <div class="hover-contain">
-                <span data-id="bootstrap">Bootstrap</span>
-                <span data-id="materialize">Materialize</span>
+            <button id="left" class="carousel-toggle">
+              <i class="fa-solid fa-hand-point-left"></i>
+            </button>
+            <div class="carousel-items">
+              <span class="active" data-id="html" draggable="false">HTML</span>
+              <div class="css-skills" draggable="false">
+                <span data-id="css">CSS</span>
+                <div class="hover-contain">
+                  <span data-id="bootstrap">Bootstrap</span>
+                  <span data-id="materialize">Materialize</span>
+                </div>
               </div>
+              <span data-id="javascript" draggable="false">JavaScript</span>
+              <span data-id="php" draggable="false">PHP</span>
+              <span data-id="nodejs" draggable="false">NodeJS</span>
             </div>
-            <span data-id="javascript">JavaScript</span>
-            <span data-id="php">PHP</span>
-            <span data-id="nodejs">NodeJS</span>
+            <button id="right" class="carousel-toggle">
+              <i class="fa-solid fa-hand-point-right"></i>
+            </button>
           </div>
           <div class="skill-content">
             <div class="skill-detail active" id="html">
@@ -450,11 +458,21 @@
           </li>
         </ul>
         <ul class="section-footer">
-          <li><a href="#about" class="scroll-link">about</a></li>
-          <li><a href="#skills" class="scroll-link">skills</a></li>
-          <li><a href="#exp" class="scroll-link">experience</a></li>
-          <li><a href="#service" class="scroll-link">service</a></li>
-          <li><a href="#contact" class="scroll-link">contact</a></li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#skills">skills</a>
+          </li>
+          <li>
+            <a href="#exp">experience</a>
+          </li>
+          <li>
+            <a href="#service">service</a>
+          </li>
+          <li>
+            <a href="#contact">contact</a>
+          </li>
         </ul>
       </div>
       <span>Created by <a href="#home">Nauffal</a> | <i class="far fa-copyright"></i><span id="date"></span> All rights reserved.</span>

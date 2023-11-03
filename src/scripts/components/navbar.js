@@ -1,13 +1,13 @@
-import "../view/all.min.js";
+import '../view/all.min.js';
 class Navbar extends HTMLElement {
-	constructor() {
-		super();
-	}
-	connectedCallback() {
-		this.render();
-	}
-	render() {
-		this.innerHTML = `
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.render();
+  }
+  render() {
+    this.innerHTML = `
     <style>
       * {
         padding: 0;
@@ -143,25 +143,25 @@ class Navbar extends HTMLElement {
     </div>
     <div class="toggle-container">
       <ul class="section-center">
-        <li><a href="#about" class="scroll-link">about</a></li>
-        <li><a href="#skills" class="scroll-link">skills</a></li>
-        <li><a href="#exp" class="scroll-link">experience</a></li>
-        <li><a href="#service" class="scroll-link">service</a></li>
-        <li><a href="#contact" class="scroll-link">contact</a></li>
+        <li><a href="#about" class="links">about</a></li>
+        <li><a href="#skills" class="links">skills</a></li>
+        <li><a href="#exp" class="links">experience</a></li>
+        <li><a href="#service" class="links">service</a></li>
+        <li><a href="#contact" class="links">contact</a></li>
       </ul>
       <ul class="social-center">
         <li>
-          <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank" class="linkedin">
+          <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank" class="linkedin links">
             <i class="fa-brands fa-linkedin"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram">
+          <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram links">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </li>
         <li>
-          <a href="https://wa.me/+6287825000868" target="_blank" class="whatsapp">
+          <a href="https://wa.me/+6287825000868" target="_blank" class="whatsapp links">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
         </li>
@@ -170,23 +170,31 @@ class Navbar extends HTMLElement {
 
     <script src="https://kit.fontawesome.com/1160dd891b.js" crossorigin="anonymous"></script>
     `;
-		const toggleContain = this.querySelector(".toggle-container");
-		const sectionCenter = this.querySelector(".section-center");
-		const socialCenter = this.querySelector(".social-center");
-		const navToggle = this.querySelector(".navToggle");
-		navToggle.addEventListener("click", () => {
-			navToggle.classList.toggle("flip");
+    const toggleContain = this.querySelector('.toggle-container');
+    const sectionCenter = this.querySelector('.section-center');
+    const socialCenter = this.querySelector('.social-center');
+    const navToggle = this.querySelector('.navToggle');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('flip');
 
-			const toggleContainHeight = toggleContain.getBoundingClientRect().height;
-			const sectionHeight = sectionCenter.getBoundingClientRect().height;
-			const socialHeight = socialCenter.getBoundingClientRect().height;
+      const toggleContainHeight = toggleContain.getBoundingClientRect().height;
+      const sectionHeight = sectionCenter.getBoundingClientRect().height;
+      const socialHeight = socialCenter.getBoundingClientRect().height;
 
-			if (toggleContainHeight === 0) {
-				toggleContain.style.height = `${sectionHeight + socialHeight}px`;
-			} else {
-				toggleContain.style.height = 0;
-			}
-		});
-	}
+      if (toggleContainHeight === 0) {
+        toggleContain.style.height = `${sectionHeight + socialHeight}px`;
+      } else {
+        toggleContain.style.height = 0;
+      }
+    });
+
+    const links = this.querySelectorAll('.links');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('flip');
+        toggleContain.style.height = 0;
+      });
+    });
+  }
 }
-customElements.define("nav-bar", Navbar);
+customElements.define('nav-bar', Navbar);

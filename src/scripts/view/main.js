@@ -18,13 +18,6 @@ const main = () => {
     }
   });
 
-  const scrollLinks = document.querySelectorAll('.scroll-link');
-  scrollLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      toggleContain.style.height = 0;
-    });
-  });
-
   // SKILLS
   const skillsContain = document.querySelector('.skill-carousel');
   const skillBtns = skillsContain.querySelectorAll('span');
@@ -59,30 +52,72 @@ const main = () => {
     }
   });
 
+  const carousel = document.querySelector('.carousel-items');
+  const carouselArrows = document.querySelectorAll('.skill-carousel button');
+  const firstSkill = carousel.querySelectorAll('span')[1];
+
   let isDragStart = false;
   let prevPageX, prevScrollLeft;
 
-  const carousel = document.querySelector('.skill-carousel');
+  const showHideIcons = () => {
+    let maxScrollWidth = carousel.scrollWidth - carousel.clientWidth;
+
+    carouselArrows[0].style.display = carousel.scrollLeft == 0 ? 'none' : 'block';
+    carouselArrows[1].style.display = carousel.scrollLeft == maxScrollWidth ? 'none' : 'block';
+  };
+  showHideIcons();
+
+  carouselArrows.forEach((arrow) => {
+    let firstImgWidth = firstSkill.clientWidth + 20;
+
+    arrow.addEventListener('click', () => {
+      /* Ternary */
+      carousel.scrollLeft += arrow.id == 'left' ? -firstImgWidth : firstImgWidth;
+      /* If/Else statement 
+      if (arrow.id == 'left') {
+        carousel.scrollLeft += firstImgWidth;
+      } else {
+        carousel.scrollLeft += firstImgWidth;
+      }
+      */
+
+      setTimeout(() => showHideIcons(), 60);
+    });
+  });
 
   const dragStart = (e) => {
     // Updating global variables value on mousedown event
     isDragStart = true;
-    prevPageX = e.pageX;
+    prevPageX = e.pageX || e.touches[0].pageX;
     prevScrollLeft = carousel.scrollLeft;
   };
+
   const dragging = (e) => {
     e.preventDefault();
+
     if (!isDragStart) return;
+    carousel.classList.add('dragging');
+
     let positionDiff = e.pageX - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
+
+    showHideIcons();
   };
+
   const dragStop = () => {
     isDragStart = false;
+    carousel.classList.remove('dragging');
   };
 
   carousel.addEventListener('mousedown', dragStart);
+  carousel.addEventListener('touchstart', dragStart);
+
   carousel.addEventListener('mousemove', dragging);
+  carousel.addEventListener('touchmove', dragging);
+
   carousel.addEventListener('mouseup', dragStop);
+  carousel.addEventListener('mouseleave', dragStop);
+  carousel.addEventListener('touchend', dragStop);
 
   // SERVICE
   const btnContain = document.querySelector('.package-name');
