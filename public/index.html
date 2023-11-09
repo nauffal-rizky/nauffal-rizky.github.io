@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nauffal</title>
+
+    <!-- Feather -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <a href="#home" class="go-to-up">
+      <i data-feather="chevron-up"></i>
+    </a>
+    <header>
+      <nav-bar></nav-bar>
+      <jumbo-tron></jumbo-tron>
+    </header>
+    <main>
+      <about-center id="about"></about-center>
+      <article class="skills" id="skills">
+        <div class="title">
+          <h1>skills</h1>
+          <div class="underline-contain">
+            <div class="circle"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
+        <section class="skill-center">
+          <div class="skill-carousel">
+            <button id="left" class="carousel-toggle">
+              <i class="fa-solid fa-hand-point-left"></i>
+            </button>
+            <div class="carousel-items">
+              <span class="active" data-id="html" draggable="false">HTML</span>
+              <div class="css-skills" draggable="false">
+                <span data-id="css">CSS</span>
+                <div class="hover-contain">
+                  <span data-id="bootstrap">Bootstrap</span>
+                  <span data-id="materialize">Materialize</span>
+                </div>
+              </div>
+              <span data-id="javascript" draggable="false">JavaScript</span>
+              <span data-id="php" draggable="false">PHP</span>
+              <span data-id="nodejs" draggable="false">NodeJS</span>
+            </div>
+            <button id="right" class="carousel-toggle">
+              <i class="fa-solid fa-hand-point-right"></i>
+            </button>
+          </div>
+          <div class="skill-content">
+            <div class="skill-detail active" id="html">
+              <div class="skill-header">
+                <a href="https://www.w3schools.com/html/" class="img-link" target="_blank">
+                  <img src="./assets/html-logo.png" alt="html" />
+                </a>
+                <abbr title="Hypertext Markup Language">
+                  <a href="https://www.w3schools.com/html/" target="_blank">HTML</a>
+                </abbr>
+              </div>
+              <p>
+                I am proficient in using HTML and have been using HTML on every website I develop. I use HTML as simple and neat as possible to reduce unnecessary code and make it easier to manage
+              </p>
+            </div>
+            <div class="skill-detail" id="bootstrap">
+              <div class="skill-header">
+                <a href="https://www.w3schools.com/css/" class="img-link" target="_blank">
+                  <img src="./assets/bootstrap-logo.svg" alt="bootstrap" />
+                </a>
+                <abbr title="Cascading Style Sheet">
+                  <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                </abbr>
+              </div>
+              <p>
+                I am experienced in using CSS to design and beautify my website based on my and my client's tastes. I also used more than one CSS framework such as Bootstrap to simplify my code and
+                design my website more efficiently.
+              </p>
+            </div>
+            <div class="skill-detail" id="materialize">
+              <div class="skill-header">
+                <a href="https://www.w3schools.com/css/" class="img-link" target="_blank">
+                  <img src="./assets/materialize-logo.svg" alt="css" />
+                </a>
+                <abbr title="Cascading Style Sheet">
+                  <a href="https://materializecss.com/" target="_blank">Materialize</a>
+                </abbr>
+              </div>
+              <p>
+                I am experienced in using CSS to design and beautify my website based on my and my client's tastes. I also used more than one CSS framework such as Materialize to simplify my code and
+                design my website more efficiently.
+              </p>
+            </div>
+            <div class="skill-detail" id="css">
+              <div class="skill-header">
+                <a href="https://www.w3schools.com/css/" class="img-link" target="_blank">
+                  <img src="./assets/css-logo2.png" alt="css" />
+                </a>
+                <abbr title="Cascading Style Sheet">
+                  <a href="https://www.w3schools.com/css/" target="_blank">CSS</a>
+                </abbr>
+              </div>
+              <p>
+                I use CSS to beautify the appearance of my website, such as using Flexbox and CSS Grid to set layout, adding animations to make websites more attractive, and setting the responsive
+                breakpoints to make the website more responsive in every size of screen
+              </p>
+            </div>
+            <div class="skill-detail" id="javascript">
+              <div class="skill-header">
+                <a href="https://www.w3schools.com/js/" class="img-link" target="_blank">
+                  <img src="./assets/javascript-logo2.png" alt="javascript" />
+                </a>
+                <a href="https://www.w3schools.com/js/" target="_blank">JavaScript</a>
+              </div>
+              <p>
+                JavaScript is a tool for me to make my website more interactive and dynamic, such as making event for each button I clicked, connecting form with whatsapp, making game algorithm, and
+                many more
+              </p>
+            </div>
+            <div class="skill-detail" id="php">
+              <div class="skill-header">
+                <a href="https://www.php.net/" class="img-link" target="_blank">
+                  <img src="./assets/php-logo.png" alt="php" />
+                </a>
+                <a href="https://www.php.net/" target="_blank">PHP</a>
+              </div>
+              <p>
+                PHP is Back-end programming language mostly used for making web server. In my case, PHP becoming on of my tool to make web applications such as sign-up and login system in a web
+                application, and many more
+              </p>
+            </div>
+            <div class="skill-detail" id="nodejs">
+              <div class="skill-header">
+                <a href="https://www.php.net/" class="img-link" target="_blank">
+                  <img src="./assets/nodejs-logo.png" alt="nodejs" />
+                </a>
+                <a href="https://nodejs.org/en" target="_blank">NodeJS</a>
+              </div>
+              <p>
+                NodeJS is Back-end programming language mostly used for making web server and designed to build scalable network applications. I use NodeJS to make it easy to connecting one index to
+                another index in purpose of making a website more dynamic
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="exp" id="exp">
+        <div class="title">
+          <h1>experience</h1>
+          <div class="underline-contain">
+            <div class="underline"></div>
+            <div class="circle"></div>
+          </div>
+        </div>
+        <section class="exp-center">
+          <div class="exp-content">
+            <div class="exp-header">
+              <h1>Latest projects</h1>
+              <p>Here I show all the results of the projects I have worked on, starting from the oldest to the latest...</p>
+            </div>
+            <div class="experiences">
+              <a href="/tic-tac-toe" class="row">
+                <div class="thumb-img"></div>
+                <h1>Tic tac toe game project</h1>
+                <p>
+                  This was the first game I made using HTML, CSS, and JavaScript to make the tic-tac-toe game system. You can play a single player Tic-tac-toe game here. Multiplayer gamemode will
+                  added soon.!!
+                </p>
+              </a>
+              <a href="#" class="row">
+                <div class="thumb-img"></div>
+                <h1>Snake game project</h1>
+                <p>
+                  Using HTML as its structure, CSS to beautify, and with JavaScript to make the game system such as event to control the snake movement, point system, difficulty system, and many more.
+                  New features still on the way.!!
+                </p>
+              </a>
+              <a href="#" class="row">
+                <div class="thumb-img"></div>
+                <h1>Memory card game project</h1>
+                <p>
+                  I make this game using HTML as its structure, CSS to style the appearance, and using JavaScript so the game system worked such as function to decide the winner, to detect cards with
+                  the same image, and many more. Updates still on working.!!
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="service" id="service">
+        <div class="title">
+          <h1>Services</h1>
+          <div class="underline-contain">
+            <div class="circle"></div>
+            <div class="underline"></div>
+          </div>
+        </div>
+        <section class="service-center">
+          <div class="service-content">
+            <h2 class="h-service">Web Development</h2>
+            <div class="services-container">
+              <div class="row">
+                <div class="service-img">
+                  <img src="./assets/website-4.jpg" alt="service-1" />
+                </div>
+                <h3 class="name">Landing page</h3>
+                <p class="desc-service desc">I'll create a landing page based on your taste for bussiness purposes or many more.</p>
+              </div>
+              <div class="row">
+                <div class="service-img">
+                  <img src="./assets/website-2.jpg" alt="service-2" />
+                </div>
+                <h3 class="name">Commercial Website</h3>
+                <p class="desc-service desc">I'll create commercial website from its design until its functionality based on reference and preferences</p>
+              </div>
+              <div class="row">
+                <div class="service-img">
+                  <img src="./assets/coding.jpg" alt="service-3" />
+                </div>
+                <h3 class="name">Company profile Website</h3>
+                <p class="desc-service desc">I'll create you a company profile website from its structure, design, and functionality based on your taste</p>
+              </div>
+              <div class="row">
+                <div class="service-img">
+                  <img src="./assets/code.jpg" alt="service-4" />
+                </div>
+                <h3 class="name">Custom Website</h3>
+                <p class="desc-service desc">I'll make a website according to your references, from Its design until Its functionality</p>
+              </div>
+            </div>
+            <div class="package-container">
+              <div class="package-table">
+                <div class="package-name">
+                  <span class="active" data-id="simple">Package 1</span>
+                  <span data-id="standard">Package 2</span>
+                  <span data-id="advance">Package 3</span>
+                </div>
+                <div class="package-desc active" id="simple">
+                  <div class="package-desc-header">
+                    <h3>Simple Website</h3>
+                    <span>90$-150$</span>
+                  </div>
+                  <p>I'll create simple responsive website for you, only using HTML and CSS.</p>
+                  <div class="delivery-revision">
+                    <div class="delivery">
+                      <i data-feather="clock"></i>
+                      <span>7 days delivery</span>
+                    </div>
+                    <div class="revision">
+                      <i data-feather="rotate-ccw"></i>
+                      <span>1 revisions</span>
+                    </div>
+                  </div>
+                  <div class="package-benefits">
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Functional website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Linked to social medias</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Responsive website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>1 page</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Interactive website</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="package-desc" id="standard">
+                  <div class="package-desc-header">
+                    <h3>Standard Website</h3>
+                    <span>150$-200$</span>
+                  </div>
+                  <p>I'll create standard responsive website for you, using HTML, CSS, and JavaScript for DOM/BOM.</p>
+                  <div class="delivery-revision">
+                    <div class="delivery">
+                      <i data-feather="clock"></i>
+                      <span>14 days delivery</span>
+                    </div>
+                    <div class="revision">
+                      <i data-feather="rotate-ccw"></i>
+                      <span>2 revisions</span>
+                    </div>
+                  </div>
+                  <div class="package-benefits">
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Functional website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Linked to social medias</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Responsive website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>1 page</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Interactive website</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="package-desc" id="advance">
+                  <div class="package-desc-header">
+                    <h3>Advance Website</h3>
+                    <span>200$-250$</span>
+                  </div>
+                  <p>I'll create advance responsive website for you, using HTML, CSS, and JavaScript for DOM/BOM.</p>
+                  <div class="delivery-revision">
+                    <div class="delivery">
+                      <i data-feather="clock"></i>
+                      <span>21 days delivery</span>
+                    </div>
+                    <div class="revision">
+                      <i data-feather="rotate-ccw"></i>
+                      <span>3 revisions</span>
+                    </div>
+                  </div>
+                  <div class="package-benefits">
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Functional website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Linked to social medias</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Responsive website</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>1 page</span>
+                    </div>
+                    <div class="row">
+                      <i data-feather="check"></i>
+                      <span>Interactive website</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="contact" id="contact">
+        <div class="title">
+          <h1>contact</h1>
+          <div class="underline-contain">
+            <div class="underline"></div>
+            <div class="circle"></div>
+          </div>
+        </div>
+        <section class="contact-center">
+          <div class="contact-content">
+            <div class="my-info">
+              <div class="info-header">
+                <h2 class="h-contact">Get in touch</h2>
+                <p class="desc-contact desc">
+                  If you want to have a conversation with me or need anything from me, you can DM me on my <a href="">Instagram</a> or you can just email me, at the email listed below
+                </p>
+              </div>
+              <div class="icons">
+                <div class="row">
+                  <div class="contact-logo">
+                    <i data-feather="user"></i>
+                  </div>
+                  <div class="info">
+                    <span class="head">Name:</span>
+                    <span class="subtitle">nauffal nur rizky</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="contact-logo">
+                    <i data-feather="mail"></i>
+                  </div>
+                  <div class="info">
+                    <span class="head">E-mail:</span>
+                    <span class="subtitle">nauffal2005@gmail.com</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="contact-logo">
+                    <i data-feather="map-pin"></i>
+                  </div>
+                  <div class="info">
+                    <span class="head">Address:</span>
+                    <span class="subtitle">bogor, indonesia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-form">
+              <h2 class="h-form">Whatsapp me:</h2>
+              <form action="" class="form">
+                <div class="input-box">
+                  <input class="input" id="username" type="text" placeholder="Name" autocomplete="off" required />
+                </div>
+                <div class="input-box">
+                  <input class="input" id="email" type="email" placeholder="E-mail" autocomplete="off" required />
+                </div>
+                <div class="input-box">
+                  <input class="input" id="phone" type="number" placeholder="Phone number" autocomplete="off" required />
+                </div>
+                <div class="dropdown-box">
+                  <div class="selected-service">
+                    <input type="text" id="selectedService" value="Service..." autocomplete="off" readonly required />
+                    <a class="dropdown-btn">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                  </div>
+                  <div class="options">
+                    <div class="options-container"></div>
+                  </div>
+                </div>
+                <div class="actions">
+                  <button class="submit-btn btn">submit!</button>
+                  <a class="refresh-btn btn"><i data-feather="refresh-ccw"></i></a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="footer-toggle">
+        <ul class="social-footer">
+          <li>
+            <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank" class="linkedin">
+              <i data-feather="linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nauffal.code/" target="_blank" class="instagram">
+              <i data-feather="instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank" class="youtube">
+              <i data-feather="youtube"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="section-footer">
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a href="#skills">skills</a>
+          </li>
+          <li>
+            <a href="#exp">experience</a>
+          </li>
+          <li>
+            <a href="#service">service</a>
+          </li>
+          <li>
+            <a href="#contact">contact</a>
+          </li>
+        </ul>
+      </div>
+      <span>Created by <a href="#home">Nauffal</a> | <i class="far fa-copyright"></i><span id="date"></span> All rights reserved.</span>
+    </footer>
+
+    <!-- Java Script -->
+    <script>
+      feather.replace();
+    </script>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
