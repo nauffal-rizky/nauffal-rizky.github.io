@@ -166,10 +166,10 @@ class AboutCenter extends HTMLElement {
               <p class="intro">
                 Hi.!! I'm Nauffal experienced in Web Development included HTML, CSS, Javascript, and many more. Proficient in website development, such as company profile website, commercial website, web applications, etc. When I first intrigued in programming I started learned about HTML, since then I keep learning about other programming language, framework, and library to improve my skills
               </p>
-              <a href="./download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
+              <a href="./public/download/Nauffal - CV.pdf" target="_blank" download="Nauffal CV" class="cv-btn btn">Download CV</a>
             </div>
             <div class="my-img">
-              <img src="./assets/profile-nomask2.JPG"></img>
+              <img src="./public/assets/profile-nomask2.JPG"></img>
             </div>
           </div>
         </div>
