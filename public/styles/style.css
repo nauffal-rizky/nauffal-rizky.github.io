@@ -291,7 +291,7 @@ nav-bar {
   display: none;
   background-color: var(--color-b3);
   padding: 10px 14px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .skill-detail.active {
   display: block;
