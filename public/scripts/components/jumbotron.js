@@ -33,34 +33,34 @@ class Jumbotron extends HTMLElement {
       }
 
       .jumbotron-content {
-        margin: 0 0 0 80px;
+        margin: 0 0 0 100px;
       }
-      .jumbotron-content .text1,
-      .jumbotron-content .text2,
-      .jumbotron-content .text3,
-      .jumbotron-content .text4 {
+      .text1,
+      .text2,
+      .text3,
+      .text4 {
         font-family: 'Roboto', 'Arial', sans-serif;
         color: #fff;
         text-shadow: 2px 2px 4px #000;
       }
-      .jumbotron-content .text1 {
-        font-size: 50px;
+      .text1 {
+        font-size: 60px;
       }
-      .jumbotron-content .text2 {
-        font-size: 55px;
+      .text2 {
+        font-size: 65px;
       }
-      .jumbotron-content .text2 a {
+      .text2 a {
         position: relative;
         color: var(--color-b2);
         transition: 0.3s;
       }
-      .jumbotron-content .text2 a:hover span {
+      .text2 a:hover span {
         position: relative;
         display: inline-block;
         animation: wavy .7s;
         animation-delay: calc(.1s * var(--i));
       }
-      .jumbotron-content .text2 a::after {
+      .text2 a::after {
         content: '';
         position: absolute;
         top: 0;
@@ -71,28 +71,27 @@ class Jumbotron extends HTMLElement {
         transform: scaleX(0);
         transition: 0.3s;
       }
-      .jumbotron-content .text2 a:hover::after {
+      .text2 a:hover::after {
         transform: scaleX(1);
       }
-      .jumbotron-content .text3 {
-        font-size: 45px;
+      .text3 {
+        font-size: 55px;
       }
-      .jumbotron-content .text4 {
-        font-size: 16px;
-        margin: 20px 0;
+      .text4 {
+        font-size: 24px;
+        margin: 20px 0px 35px 0px;
       }
-      .jumbotron-content .text4 span {
-        font-size: 20px;
+      .text4 span {
+        font-size: 22px;
       }
       .explore-btn {
         display: inline-block;
         background-color: transparent;
         color: var(--color-b2);
         border: 2px solid var(--color-b2);
-        font-size: 18px;
+        font-size: 20px;
         font-family: 'Arial', sans-serif;
-        padding: 15px 25px;
-        margin: 15px 0 0 0;
+        padding: 18px 25px;
         border-radius: 5px;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -102,35 +101,70 @@ class Jumbotron extends HTMLElement {
         color: #fff;
       }
 
-      @media (max-width: 950px) {
+      @media (max-width: 1280px) {
         .jumbotron-content {
-          margin: 0 0 0 30px;
+          margin: 0 0 0 80px;
         }
-        .jumbotron-content .text1 {
-          font-size: 40px;
+        .text1 {
+          font-size: 50px;
         }
-        .jumbotron-content .text2 {
+        .text2 {
+          font-size: 55px;
+        }
+        .text3 {
           font-size: 45px;
         }
-        .jumbotron-content .text3 {
-          font-size: 35px;
+        .text4 {
+          font-size: 20px;
         }
-      }
-      @media (max-width: 768px) {
-        .jumbotron-content .text1 {
-          font-size: 30px;
+        .text4 span {
+          font-size: 18px;
         }
-        .jumbotron-content .text2 {
-          font-size: 35px;
-        }
-        .jumbotron-content .text3 {
-          font-size: 25px;
-        }
-      }
-      @media (max-width: 678px) {
         .explore-btn {
           font-size: 16px;
-          padding: 10px 20px;
+          padding: 16px 25px;
+        }
+      }
+      @media (max-width: 950px) {
+        .jumbotron-content {
+          margin: 0 0 0 50px;
+        }
+        .text1 {
+          font-size: 45px;
+        }
+        .text2 {
+          font-size: 50px;
+        }
+        .text3 {
+          font-size: 40px;
+        }
+        .text4 {
+          margin: 15px 0px 30px 0px;
+        }
+      }
+      @media (max-width: 676px) {
+        .jumbotron-content {
+          margin: 0 0 0 40px;
+        }
+        .text1 {
+          font-size: 40px;
+        }
+        .text2 {
+          font-size: 45px;
+        }
+        .text3 {
+          font-size: 35px;
+        }
+        .text4 {
+          font-size: 18px;
+          margin: 10px 0px 25px 0px;
+        }
+        .text4 span {
+          font-size: 16px;
+        }
+        .explore-btn {
+          font-size: 14px;
+          padding: 16px 25px;
         }
       }
     </style>
@@ -140,7 +174,7 @@ class Jumbotron extends HTMLElement {
       <p class="text2">I'm <a href="https://www.instagram.com/nauffal.code/" target="_blank"><span style="--i:1">N</span><span style="--i:2">a</span><span style="--i:3">u</span><span style="--i:4">f</span><span style="--i:5">f</span><span style="--i:6">a</span><span style="--i:7">l</span></a>,</p>
       <p class="text3">welcome to my website</p>
       <p class="text4">Me as: <span>Web developer, Web Designer</span></p>
-      <a href="#about" class="explore-btn btn">Explore more...</a>
+      <a href="#about" class="explore-btn">Explore more...</a>
     </div>
     `;
   }

@@ -55,6 +55,9 @@ header {
   background-image: url('../assets/profile-nomask.JPG');
   background-size: cover;
   background-repeat: no-repeat;
+  background-blend-mode: darken;
+  /* box-shadow: inset 0px 10px 5px rgba(0, 0, 0, 0.7); */
+  box-shadow: 0px 10px 20px #000 inset;
 }
 nav-bar {
   position: fixed;
@@ -90,52 +93,74 @@ nav-bar {
 .exp,
 .service,
 .contact {
-  min-height: 600px;
+  min-height: 550px;
   padding: 80px 0;
+}
+.title {
+  position: relative;
+  color: var(--color-b3);
+  font-size: 55px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0px 0px 40px 0px;
 }
 .skills .title,
 .exp .title,
-.service .title,
 .contact .title {
-  font-family: 'Roboto', sans-serif;
-  text-transform: capitalize;
-  margin: 0 0 50px 0;
+  color: var(--color-b2);
 }
-.skills .title h1,
-.exp .title h1,
-.service .title h1,
-.contact .title h1 {
-  color: var(--color-b3);
-  font-size: 45px;
+.skills .title::before,
+.exp .title::before,
+.contact .title::before {
+  background-color: #fff;
 }
-.exp .title h1,
-.contact .title h1 {
-  margin: 0 0 0 20px;
+.exp .title::before,
+.service .title::before,
+.contact .title::before {
+  width: 150px;
 }
-.skills .title .underline-contain,
-.exp .title .underline-contain,
-.service .title .underline-contain,
-.contact .title .underline-contain {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.skills .title .underline-contain .underline,
-.exp .title .underline-contain .underline,
-.service .title .underline-contain .underline,
-.contact .title .underline-contain .underline {
-  width: 400px;
-  height: 3px;
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  width: 100px;
+  height: 1.5px;
   background-color: #000;
+  transform: translateX(50%);
 }
-.skills .title .underline-contain .circle,
-.exp .title .underline-contain .circle,
-.service .title .underline-contain .circle,
-.contact .title .underline-contain .circle {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000;
-  border-radius: 15px;
+.skills .title::after {
+  content: 'abilities';
+  background-image: url(../assets/work.jpg);
+  background-position: center;
+  padding: 3px 5px;
+}
+.exp .title::after {
+  content: 'my projects';
+  background-color: var(--color-b3);
+}
+.service .title::after {
+  content: 'what i offer';
+}
+.contact .title::after {
+  background-image: url(../assets/light-bulb.jpg);
+  background-position: -35px -355px;
+  content: 'contact me';
+  padding: 3px 5px;
+}
+.title::after {
+  position: absolute;
+  bottom: -24px;
+  right: 50%;
+  width: fit-content;
+  background-color: #fff;
+  color: var(--color-b4);
+  font-size: 20px;
+  text-transform: lowercase;
+  transform: translateX(50%);
+  border-radius: 10px;
+  padding: 3px;
 }
 .service-center {
   display: flex;
@@ -186,7 +211,6 @@ nav-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   max-width: 90%;
   width: 600px;
   font-family: 'Poppins', sans-serif;
@@ -221,7 +245,6 @@ nav-bar {
 }
 .carousel-items {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
   overflow-x: hidden;
@@ -363,22 +386,23 @@ nav-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   width: 1200px;
   max-width: 90%;
 }
 .exp-header {
-  width: 350px;
+  width: 500px;
   max-width: 100%;
   color: #ddd;
   text-align: center;
 }
 .exp-header h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   margin: 0px 0px 10px 0px;
 }
 .exp-header p {
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
 }
 .exp-content > h1,
@@ -399,15 +423,12 @@ nav-bar {
 .experiences .row:hover {
   transform: scale(1.05);
 }
-.experiences .row p {
-  color: #111;
-}
 .row:nth-child(1) .thumb-img {
   width: 100%;
   height: 300px;
-  background-image: url(../assets/tictactoe-sc.png);
+  background-image: url(../assets/tictactoe-sc2.png);
   background-position: center;
-  background-size: cover;
+  background-size: 1200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -416,23 +437,23 @@ nav-bar {
   height: 300px;
   background-image: url(../assets/snakegame-sc.png);
   background-position: center;
-  background-size: cover;
+  background-size: 700px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .row:nth-child(3) .thumb-img {
   width: 100%;
   height: 300px;
-  background-image: url(../assets/memorycardgame-sc.png);
-  background-position: top;
-  background-size: cover;
+  background-image: url(../assets/memorycard-sc.png);
+  background-position: center;
+  background-size: 900px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .experiences .row h1 {
   color: var(--color-b2);
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   margin: 10px 0px 5px 0px;
   transition: 0.3s;
@@ -442,22 +463,20 @@ nav-bar {
 }
 .experiences .row p {
   width: 90%;
+  color: #111;
   font-family: 'Open sans', sans-serif;
   text-align: justify;
   margin: 0 auto;
 }
 
 /* SERVICE */
-.h-service {
+.h-service,
+.h-package {
   color: var(--color-b3);
   font-size: 25px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   margin: 0 0 20px 0;
-}
-.h-service:hover span {
-  animation: gelombang 0.7s;
-  animation-delay: calc(0.1s * var(--i));
 }
 .services-container {
   display: grid;
@@ -627,7 +646,6 @@ nav-bar {
 
 /* CONTACT */
 .contact {
-  background-color: rgb(0, 0, 0, 0.2);
   background-image: url('../assets/light-bulb.jpg');
   background-size: cover;
   background-position: center;
@@ -656,7 +674,6 @@ nav-bar {
 .desc-contact,
 .info {
   color: #fff;
-  /* text-shadow: 2px 2px 4px rgb(0 0 0 / 20%); */
   text-shadow: 2px 2px 4px #000;
 }
 .desc-contact {
@@ -734,6 +751,7 @@ form.form {
   background-color: #fff;
   color: var(--color-b3);
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   border: none;
   padding: 10px;
   outline: none;
@@ -868,15 +886,31 @@ footer span a:hover::after {
 }
 
 /* Breakpoints */
-@media (max-width: 1000px) {
-  .services-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
-@media (max-width: 950px) {
+@media (max-width: 1374px) {
   header {
     background-position: center;
   }
+}
+@media (max-width: 1024px) {
+  .title {
+    font-size: 50px;
+    margin: 0px 0px 35px 0px;
+  }
+  .title::before {
+    bottom: -5px;
+  }
+  .title::after {
+    font-size: 18px;
+    bottom: -18px;
+  }
+  .exp-header h1 {
+    font-size: 22px;
+  }
+  .experiences .row h1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 950px) {
   .contact-form {
     max-width: 100%;
     width: 500px;
@@ -887,42 +921,67 @@ footer span a:hover::after {
   .exp-content {
     gap: 25px;
     width: 500px;
-    max-width: 90%;
-  }
-  .exp-header h1 {
-    font-size: 18px;
-    margin: 0px 0px 5px 0px;
-  }
-  .exp-header p {
-    font-size: 14px;
   }
   .experiences {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
-  .experiences .row img {
-    height: 250px;
-  }
-  .experiences .row p {
-    font-size: 14px;
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 @media (max-width: 768px) {
   nav-bar {
     padding: 20px 25px;
   }
-  .service .title h1,
-  .skills .title h1,
-  .exp .title h1,
-  .contact .title h1 {
-    font-size: 40px;
+  .title {
+    font-size: 45px;
+    margin: 0px 0px 30px 0px;
   }
-  .about .title .underline-contain .underline,
-  .skills .title .underline-contain .underline,
-  .exp .title .underline-contain .underline,
-  .service .title .underline-contain .underline,
-  .contact .title .underline-contain .underline {
-    width: 250px;
+  .title::before {
+    bottom: -5px;
+  }
+  .title::after {
+    font-size: 16px;
+    bottom: -18px;
+  }
+  .skill-content {
+    width: 550px;
+  }
+  .skill-center {
+    gap: 10px;
+  }
+  .carousel-items {
+    gap: 15px;
+  }
+  .carousel-items span {
+    font-size: 18px;
+    padding: 8px 14px;
+  }
+  .css-skills.active .hover-contain {
+    width: 220px;
+  }
+  .hover-contain span {
+    font-size: 16px;
+  }
+  .skill-header abbr a,
+  .skill-header a {
+    font-size: 22px;
+  }
+  .skill-header img {
+    width: 35px;
+  }
+  .skill-header img:hover {
+    width: 45px;
+  }
+  .exp-header h1 {
+    font-size: 20px;
+  }
+  .experiences .row h1 {
+    font-size: 18px;
+  }
+  .experiences .row p {
+    font-size: 14px;
   }
   .package-desc-header h3,
   .package-desc-header span {
@@ -936,60 +995,59 @@ footer span a:hover::after {
     font-size: 15px;
   }
 }
-@media (max-width: 730px) {
-  .carousel-items {
-    justify-content: flex-start;
-  }
-}
 @media (max-width: 705px) {
   .h-service {
     font-size: 22px;
   }
+}
+@media (max-width: 688px) {
   .desc-service {
-    width: 80%;
+    max-width: 60%;
+  }
+}
+@media (max-width: 676px) {
+  .skill-content {
+    width: 500px;
   }
   .carousel-items span {
-    font-size: 18px;
+    font-size: 16px;
     padding: 8px 14px;
   }
-  .css-skills.active .hover-contain {
-    width: 220px;
-  }
-  .hover-contain span {
-    font-size: 16px;
-  }
-  .skill-header {
-    margin: 0px 0px 5px 0px;
-  }
-  .skill-header a {
-    font-size: 22px;
-  }
-  .skill-header img {
-    width: 35px;
-  }
-  .skill-header img:hover {
-    width: 45px;
+  .skill-detail {
+    padding: 8px 12px;
   }
   .skill-detail p {
     font-size: 14px;
   }
-}
-@media (max-width: 678px) {
-  .h-skill,
+  .carousel-items {
+    gap: 10px;
+  }
+  .css-skills.active .hover-contain {
+    width: 196px;
+  }
+  .hover-contain {
+    gap: 5px;
+  }
+  .hover-contain span {
+    font-size: 14px;
+  }
+  .skill-header {
+    margin: 0px 0px 5px 0px;
+  }
+  .skill-header abbr a,
+  .skill-header a {
+    font-size: 20px;
+  }
+  .skill-header img:hover {
+    width: 40px;
+  }
   .h-contact,
   .h-form {
     font-size: 20px;
   }
-  .desc {
-    font-size: 14px;
-  }
   .desc-service {
     font-size: 16px;
   }
-  .header-graph {
-    font-size: 16px;
-  }
-
   .contact-content {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
@@ -1012,6 +1070,10 @@ footer span a:hover::after {
     padding: 10px 0px;
     overflow-y: hidden;
   }
+  .exp-content {
+    gap: 20px;
+    width: 400px;
+  }
 }
 @media (max-width: 578px) {
   .go-to-up {
@@ -1033,15 +1095,8 @@ footer span a:hover::after {
     width: 40px;
     height: 40px;
   }
-  .skills .title h1,
-  .service .title h1 {
-    margin: 0 15px 0 0;
-  }
   .experiences {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  .contact .title h1 {
-    margin: 0 0 0 15px;
   }
   .contact-content {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
