@@ -1,13 +1,13 @@
 class AboutCenter extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ mode: 'closed' });
-  }
-  connectedCallback() {
-    this.render();
-  }
-  render() {
-    this._shadowRoot.innerHTML = `
+	constructor() {
+		super();
+		this._shadowRoot = this.attachShadow({ mode: "closed" });
+	}
+	connectedCallback() {
+		this.render();
+	}
+	render() {
+		this._shadowRoot.innerHTML = `
     <style>
       * {
         padding: 0;
@@ -90,8 +90,8 @@ class AboutCenter extends HTMLElement {
         text-decoration: underline;
       }
       .my-img {
-        width: 450px;
-        height: 450px;
+        width: 400px;
+        height: 400px;
         padding: 5px;
         border: 2px solid var(--color-b2);
         border-radius: 5px;
@@ -151,8 +151,8 @@ class AboutCenter extends HTMLElement {
           bottom: -18px;
         }
         .my-img {
-          width: 400px;
-          height: 400px;
+          width: 350px;
+          height: 350px;
         }
         .desc-about h2 {
           font-size: 28px;
@@ -177,8 +177,8 @@ class AboutCenter extends HTMLElement {
           bottom: -18px;
         }
         .my-img {
-          width: 350px;
-          height: 350px;
+          width: 300px;
+          height: 300px;
         }
         .desc-about h2 {
           font-size: 26px;
@@ -196,8 +196,8 @@ class AboutCenter extends HTMLElement {
           width: 450px;
         }
         .my-img {
-          width: 300px;
-          height: 300px;
+          width: 250px;
+          height: 250px;
         }
         .desc-about h2 {
           font-size: 22px;
@@ -231,6 +231,6 @@ class AboutCenter extends HTMLElement {
         </section>
     </div>
     `;
-  }
+	}
 }
-customElements.define('about-center', AboutCenter);
+customElements.define("about-center", AboutCenter);

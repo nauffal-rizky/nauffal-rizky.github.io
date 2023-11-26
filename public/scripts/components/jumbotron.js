@@ -1,13 +1,13 @@
 class Jumbotron extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ mode: 'closed' });
-  }
-  connectedCallback() {
-    this.render();
-  }
-  render() {
-    this._shadowRoot.innerHTML = `
+	constructor() {
+		super();
+		this._shadowRoot = this.attachShadow({ mode: "closed" });
+	}
+	connectedCallback() {
+		this.render();
+	}
+	render() {
+		this._shadowRoot.innerHTML = `
     <style>
       * {
         padding: 0;
@@ -164,7 +164,31 @@ class Jumbotron extends HTMLElement {
         }
         .explore-btn {
           font-size: 14px;
-          padding: 16px 25px;
+          padding: 14px 22px;
+        }
+      }
+      @media (max-width: 576px) {
+        .jumbotron-content {
+          margin: 0 0 0 30px;
+        }
+        .text1 {
+          font-size: 35px;
+        }
+        .text2 {
+          font-size: 40px;
+        }
+        .text3 {
+          font-size: 30px;
+        }
+        .text4 {
+          font-size: 16px;
+          margin: 10px 0px 20px 0px;
+        }
+        .text4 span {
+          font-size: 14px;
+        }
+        .explore-btn {
+          padding: 12px 18px;
         }
       }
     </style>
@@ -177,6 +201,6 @@ class Jumbotron extends HTMLElement {
       <a href="#about" class="explore-btn">Explore more...</a>
     </div>
     `;
-  }
+	}
 }
-customElements.define('jumbo-tron', Jumbotron);
+customElements.define("jumbo-tron", Jumbotron);
