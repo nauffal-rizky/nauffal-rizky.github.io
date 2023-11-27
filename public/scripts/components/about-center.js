@@ -1,13 +1,13 @@
 class AboutCenter extends HTMLElement {
-	constructor() {
-		super();
-		this._shadowRoot = this.attachShadow({ mode: "closed" });
-	}
-	connectedCallback() {
-		this.render();
-	}
-	render() {
-		this._shadowRoot.innerHTML = `
+  constructor() {
+    super();
+    this._shadowRoot = this.attachShadow({ mode: 'closed' });
+  }
+  connectedCallback() {
+    this.render();
+  }
+  render() {
+    this._shadowRoot.innerHTML = `
     <style>
       * {
         padding: 0;
@@ -29,7 +29,7 @@ class AboutCenter extends HTMLElement {
         font-family: 'Roboto', sans-serif;
         text-align: center;
         text-transform: capitalize;
-        margin: 0px 0px 40px 0px;
+        margin: 0px 0px 60px 0px;
       }
       .title::before{
         content: "";
@@ -141,7 +141,7 @@ class AboutCenter extends HTMLElement {
         }
         .title {
           font-size: 50px;
-          margin: 0px 0px 35px 0px;
+          margin: 0px 0px 55px 0px;
         }
         .title::before {
           bottom: -5px;
@@ -167,7 +167,7 @@ class AboutCenter extends HTMLElement {
         }
         .title {
           font-size: 45px;
-          margin: 0px 0px 30px 0px;
+          margin: 0px 0px 50px 0px;
         }
         .title::before {
           bottom: -5px;
@@ -194,6 +194,10 @@ class AboutCenter extends HTMLElement {
       @media (max-width: 576px) {
         .profile {
           width: 450px;
+        }
+        .title {
+          font-size: 40px;
+          margin: 0px 0px 45px 0px;
         }
         .my-img {
           width: 250px;
@@ -231,6 +235,6 @@ class AboutCenter extends HTMLElement {
         </section>
     </div>
     `;
-	}
+  }
 }
-customElements.define("about-center", AboutCenter);
+customElements.define('about-center', AboutCenter);
