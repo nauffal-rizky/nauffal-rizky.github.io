@@ -31,7 +31,6 @@ section {
 	align-items: center;
 	width: 1000px;
 	max-width: 90%;
-	padding: 3rem 0;
 }
 .title {
 	color: var(--main2);
@@ -179,6 +178,13 @@ footer a {
 }
 
 /* ABOUT US */
+.about-me,
+.my-works {
+	padding: 3rem 0;
+}
+.about-me .wrapper {
+	width: 900px;
+}
 .about-me .wrapper .content {
 	width: 100%;
 }
@@ -232,7 +238,7 @@ footer a {
 	margin: 0 0 0.5rem 0;
 }
 .about-me .wrapper .content .service-header p {
-	font-family: var(--fontB);
+	font-family: var(--fontC);
 	font-size: 1.2rem;
 	font-weight: 300;
 }
@@ -285,6 +291,9 @@ footer a {
 }
 
 /* MY JOURNEY */
+.my-journey .wrapper {
+	width: 800px;
+}
 .my-journey .wrapper .content {
 	width: 100%;
 }
@@ -326,6 +335,7 @@ footer a {
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center;
+	filter: brightness(90%);
 }
 .my-journey
 	.wrapper
@@ -488,6 +498,9 @@ footer a {
 }
 
 /* CONTACT */
+.contact {
+	padding: 0 0 3rem 0;
+}
 .contact .wrapper .content {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -975,6 +988,10 @@ footer .social-links a {
 		font-size: 2rem;
 		margin: 0 0 1rem 0;
 	}
+	.about-me,
+	.my-works {
+		padding: 2rem 0;
+	}
 	.about-me .wrapper .content .col .row img {
 		width: 200px;
 		height: 200px;
@@ -1080,6 +1097,9 @@ footer .social-links a {
 		:is(.name, .timeline) {
 		font-size: 1.1rem;
 	}
+	.contact {
+		padding: 0 0 2rem 0;
+	}
 	.contact .wrapper .content {
 		gap: 1rem;
 		width: 400px;
@@ -1127,5 +1147,20 @@ footer .social-links a {
 @media (max-width: 425px) {
 	.about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
 		width: 100%;
+	}
+	.contact .wrapper .content .get-in-touch .col .row {
+		gap: 0.5rem;
+	}
+	.contact .wrapper .content .get-in-touch .col .row i {
+		font-size: 1.1rem;
+	}
+	footer span,
+	footer a {
+		font-size: 1rem;
+	}
+	footer span,
+	footer .toggle-links a,
+	.contact .wrapper .content .get-in-touch .col .row .text span {
+		font-size: 0.9rem;
 	}
 }

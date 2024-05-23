@@ -41,7 +41,7 @@ navDrop.addEventListener("click", () => {
 	}
 });
 
-const toggles = document.querySelectorAll(".toggle-links li a");
+const toggles = document.querySelectorAll(".nav-link");
 toggles.forEach((toggle) => {
 	toggle.addEventListener("click", (e) => {
 		e.preventDefault();
