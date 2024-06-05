@@ -179,6 +179,13 @@ footer a {
 }
 
 /* ABOUT US */
+.about-me,
+.my-works {
+  padding: 3rem 0;
+}
+.about-me .wrapper {
+  width: 900px;
+}
 .about-me .wrapper .content {
   width: 100%;
 }
@@ -281,6 +288,9 @@ footer a {
 }
 
 /* MY JOURNEY */
+.my-journey .wrapper {
+  width: 800px;
+}
 .my-journey .wrapper .content {
   width: 100%;
 }
@@ -467,6 +477,9 @@ footer a {
 }
 
 /* CONTACT */
+.contact {
+  padding: 0 0 3rem 0;
+}
 .contact .wrapper .content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
