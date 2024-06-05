@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>MY LOVE</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap');
+
+      :root {
+        --color1: #f14e95;
+        --fontA: 'Roboto';
+        --fontB: 'Poppins';
+        --fontC: 'EB Garamond';
+
+        --primary: #fff;
+        --bg-color: rgb(5, 53, 61);
+        --bg-envelope-color: #f5edd1;
+        --envelope-tab: #ecdeb8;
+        --envelope-cover: #e6cfa7;
+        --shadow-color: rgba(0, 0, 0, 0.2);
+        --txt-color: #444;
+        --heart-color: red;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      p {
+        font-family: var(--fontC), sans-serif;
+        letter-spacing: 0.5px;
+      }
+
+      .front {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url(./images/jumbotron.jpg);
+        background-size: cover;
+        background-position: 0 0;
+        color: #fff;
+        text-shadow: 1px 1px 2px #111;
+      }
+      .front span {
+        font-family: var(--fontB), sans-serif;
+        font-size: 3rem;
+      }
+      .front span:nth-child(2) {
+        font-size: 2.5rem;
+      }
+      .front span:nth-child(3) {
+        font-size: 2rem;
+      }
+      .front span .highlight {
+        position: relative;
+      }
+      .front span .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100%;
+        height: 1.5px;
+        background-color: var(--color1);
+        transform: translateX(-50%);
+      }
+      .front p {
+        background-color: #fff;
+        color: var(--color1);
+        text-shadow: none;
+        margin: 1rem 0 0 0;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.3rem;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem 0;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 900px;
+        max-width: 90%;
+      }
+      .col .row {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: 'img content';
+        gap: 1rem;
+        width: 700px;
+        max-width: 100%;
+      }
+      .col .row:nth-child(even) {
+        grid-template-columns: 60% 40%;
+        grid-template-areas: 'content img';
+        margin: 0 0 0 auto;
+      }
+      .col .row img {
+        grid-area: img;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .col .row .content {
+        grid-area: content;
+      }
+      .col .row .content span {
+        display: block;
+        color: var(--color1);
+        font-family: var(--fontA), sans-serif;
+        font-size: 2rem;
+      }
+      .col .row:nth-child(even) .content :is(span, p) {
+        text-align: end;
+      }
+
+      .surat-cinta {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url(./bg.jpg);
+        background-size: cover;
+        background-position: 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .container > .envelope-wrapper {
+        position: relative;
+        background: var(--bg-envelope-color);
+        box-shadow: 0 0 40px var(--shadow-color);
+      }
+      .envelope-wrapper > .envelope {
+        position: relative;
+        width: 300px;
+        height: 230px;
+      }
+      .envelope-wrapper > .envelope::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        border-top: 130px solid var(--envelope-tab);
+        border-right: 150px solid transparent;
+        border-left: 150px solid transparent;
+        transform-origin: top;
+        transition: all 0.5s ease-in-out 0.7s;
+      }
+      .envelope-wrapper > .envelope::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        width: 0px;
+        height: 0px;
+        border-top: 130px solid transparent;
+        border-right: 150px solid var(--envelope-cover);
+        border-bottom: 100px solid var(--envelope-cover);
+        border-left: 150px solid var(--envelope-cover);
+      }
+      .envelope > .letter {
+        position: absolute;
+        right: 20%;
+        bottom: 0;
+        width: 54%;
+        height: 80%;
+        background: var(--primary);
+        text-align: center;
+        transition: all 1s ease-in-out;
+        box-shadow: 0 0 5px var(--shadow-color);
+        padding: 20px 10px;
+      }
+
+      .envelope > .letter > .text {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: var(--txt-color);
+        text-align: left;
+        font-size: 10px;
+      }
+      .envelope > .letter > .stamp {
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+      }
+      .heart {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        background: var(--heart-color);
+        z-index: 4;
+        transform: translate(-50%, -20%) rotate(45deg);
+        transition: transform 0.5s ease-in-out 1s;
+        box-shadow: 0 1px 6px var(--shadow-color);
+        cursor: pointer;
+      }
+      .heart:before,
+      .heart:after {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: var(--heart-color);
+        border-radius: 50%;
+      }
+      .heart:before {
+        top: -7.5px;
+      }
+      .heart:after {
+        right: 7.5px;
+      }
+      .flap > .envelope:before {
+        transform: rotateX(180deg);
+        z-index: 0;
+      }
+      .flap > .envelope > .letter {
+        bottom: 100px;
+        transform: scale(1.5);
+        transition-delay: 1s;
+      }
+      .flap > .heart {
+        transform: rotate(90deg);
+        transition-delay: 0.4s;
+      }
+
+      /* BREAKPOINTS */
+      @media (max-width: 768px) {
+        .front span {
+          font-size: 2.5rem;
+        }
+        .front span:nth-child(2) {
+          font-size: 2.2rem;
+        }
+        .front span:nth-child(3) {
+          font-size: 1.5rem;
+        }
+        .col {
+          align-items: center;
+        }
+        .col .row {
+          grid-template-columns: 1fr !important;
+          grid-template-areas:
+            'img'
+            'content' !important;
+          gap: 0.5rem;
+          width: 500px;
+          margin: 0 !important;
+        }
+        .col .row img {
+          width: auto;
+          height: 300px;
+          margin: 0 auto;
+        }
+        .col .row .content span {
+          font-size: 1.75rem;
+          text-align: center !important;
+        }
+        .col .row .content p {
+          text-align: center !important;
+        }
+      }
+      @media (max-width: 576px) {
+        .front span {
+          font-size: 2.2rem;
+        }
+        .front span:nth-child(2) {
+          font-size: 2rem;
+        }
+        .front span:nth-child(3) {
+          font-size: 1.2rem;
+        }
+        .col .row {
+          gap: 0.3rem;
+        }
+        .col .row img {
+          height: 250px;
+        }
+        .col .row .content span {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="front">
+      <span>Hey, <span class="highlight">my dear</span></span>
+      <span>Accept my confession.</span>
+      <span>I love you until the very end.</span>
+      <p>A little present for my future wife - 2024</p>
+    </div>
+    <main>
+      <div class="col">
+        <div class="row beautiful">
+          <img src="./images/beautiful.png" alt="" />
+          <div class="content">
+            <span>Your sincerity</span>
+            <p>
+              Mau sampai kapanpun dirimu adalah sosok yang begitu tulus. Seseorang yang jujur akan apa yang dirasakan dan dipikirkannya, selaras dengan aksi yang dilakukannya. Sesungguhnya dirimu itu
+              begitu polos, berusaha begitu keras demi mencapai keinginanmu, bahkan terkadang kamu begitu serius akan tujuanmu sampai melupakan kesehatan dirimu sendiri. Disitulah kesibukkanku berada,
+              aku harus mengingatkanmu dan memastikanmu untuk tidak berlebihan. Aku sangat senang dengan dirimu yang tulus dan sepenuh hati akan tujuanmu, yang tidak kusukai adalah disaat kamu
+              melupakkan batasmu dan membuat ku khawatir.
+            </p>
+          </div>
+        </div>
+        <div class="row cool">
+          <img src="./images/cool.png" alt="" />
+          <div class="content">
+            <span>Your determination</span>
+            <p>
+              Tekadmu, selalu membuatku terkagum kagum. Sesaat kamu memahami apa keinginan dan tujuanmu, kamu langsung menjauhi segala yang akan menganggumu mencapainya dan langsung mendekati segala
+              yang akan mendekatkanmu dengan tujuanmu. Walau begitu dirimu tetaplah manusia, ada saat dimana kamu kesulitan untuk mempertahankan disiplin dan mengontrol diri kamu. Disitulah aku datang
+              membantu untuk mengingatkanmu tentang "Apa tujuan kamu/kita yang sebenarnya?", dan selama perjalanan itu kita akan terus bersama.
+            </p>
+          </div>
+        </div>
+        <div class="row cute">
+          <img src="./images/cute.jpg" alt="" />
+          <div class="content">
+            <span>Your endless love</span>
+            <p>
+              Kasih sayang yang kamu berikan kepadaku tidaklah kurang maupun berlebih, itu ada di jumlah yang cukup. Cukup untuk membuatku ingin menikahimu dan membahagiakanmu seumur hidup. Cukup
+              untuk membuatku berpikir kalau diriku adalah seorang pahlawan dalam cerita hidupku. Cukup untuk membuatku sadar kalau hidupku itu akan jauh lebih bahagia jika bersamamu. Kasih sayangmu
+              itu sangatlah dalam dan luas, kamu dapat menerimaku dalam keadaan terburuk dan berkeinginan untuk berjalan mengarungi hutan berduri bersamaku.
+            </p>
+          </div>
+        </div>
+        <div class="row sexy">
+          <img src="./images/sexy.png" alt="" />
+          <div class="content">
+            <span>Your beauty & cuteness</span>
+            <p>
+              Kecantikkanmu, keanggunanmu, sifat imut dan lucumu itulah yang menjadi daya tarik lebih yang kamu miliki. Aku selalu berhasil dibuat mabuk dan meleleh olehnya. Dan maaf wahai hatiku,
+              karena daya tarik yang dimiliki kekasihku ini akan terus bertambah setiap waktunya. Senyumanmu, tawamu, pipi meronamu, matamu, kalau kusebut semua tidak akan ada habisnya. Oh bubbie,
+              jikalau kesempurnaan yang kau cari sesungguhnya tetaplah jadi dirimu sendiri. Janganlah merasa insecure, janganlah memandang rendah dirimu, dan janganlah menganggap bahwa dirimu itu
+              bukan siapa siapa. Sesungguhnya hatiku terasa seperti tersayat jikalau kamu berpikir demikian. Kamu adalah wanita yang paling cantik yang pernah aku temui, yang paling hebat dalam banyak
+              sisim, dan dari semua itu kamu adalah "seseorang" yang begitu berharga bagiku.
+            </p>
+          </div>
+        </div>
+        <div class="row funny">
+          <img src="./images/funny.png" alt="" />
+          <div class="content">
+            <span>Your presence</span>
+            <p>
+              Keberadaanmu yang menemaniku baik secara langsung maupun tidak selalu membuatku menjadi lebih semangat sehari-harinya. Keberadaan dan kehangatanmu merupakan hal yang paling aku rindukan
+              setiap harinya, karena saat bersamamu, keberadaan dan kehangatanmu selalu berhasil membuatku merasa aman dan tenang. Setiap harinya aku selalu mendambakan kamu setelah lelah akan
+              kegiatan yang kulakukan sehari-harinya, karena dengan bisa mendengar suaramu saja bisa melepaskan beban dan rasa lelahku.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="surat-cinta">
+        <div class="container">
+          <div class="envelope-wrapper">
+            <div class="envelope">
+              <div class="letter">
+                <div class="text">
+                  <strong>To Bubbiee,</strong>
+                  <p>
+                    Thank you for every patience, struggle, and love that you gave to our relationship. It's a tough time not be able to meet or call you. But, let's always be together in any
+                    situation. I love you so much my beloved pretty bubbiee.
+                  </p>
+                </div>
+                <img src="./images/stamp.jpg" alt="gurei" class="stamp" />
+              </div>
+            </div>
+            <div class="heart"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS -->
+    <script>
+      const photoSrc = [
+        ['./images/beautiful.png', './images/beautiful2.png', './images/beautiful3.png'],
+        ['./images/cool.png', './images/cool2.png', './images/cool3.png'],
+        ['./images/cute.jpg', './images/cute2.png', './images/cute3.png'],
+        ['./images/sexy.png', './images/sexy2.png', './images/sexy3.png'],
+        ['./images/funny.png', './images/funny2.png', './images/funny3.png'],
+      ];
+
+      let index = 1;
+
+      const imgShuffle = (item, queue) => {
+        setInterval(() => {
+          if (index === 3) index = 0;
+          item.setAttribute('src', `${photoSrc[queue][index]}`);
+          index += 1;
+        }, 3000);
+      };
+
+      const beautiful = document.querySelector('.beautiful img');
+      imgShuffle(beautiful, 0);
+
+      const cool = document.querySelector('.cool img');
+      imgShuffle(cool, 1);
+
+      const cute = document.querySelector('.cute img');
+      imgShuffle(cute, 2);
+
+      const sexy = document.querySelector('.sexy img');
+      imgShuffle(sexy, 3);
+
+      const funny = document.querySelector('.funny img');
+      imgShuffle(funny, 4);
+
+      const envelope = document.querySelector('.envelope-wrapper');
+      envelope.addEventListener('click', () => {
+        envelope.classList.toggle('flap');
+      });
+    </script>
+  </body>
+</html>
