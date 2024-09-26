@@ -274,7 +274,7 @@ footer a {
 .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
   display: flex;
   flex-direction: column;
-  width: calc(25% - 10px);
+  width: calc(100% / 3 - 10px);
   background-color: #fff;
   font-size: 18px;
   text-align: center;
