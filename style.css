@@ -1,0 +1,1030 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap');
+
+:root {
+  --main1: #141a0c;
+  --main2: #465d39;
+  --main3: #786e4d;
+  --main4: #e04448;
+  --fontA: 'Roboto';
+  --fontB: 'Poppins';
+  --fontC: 'EB Garamond';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* SIMILAR CODES */
+html {
+  scroll-behavior: smooth;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  max-width: 90%;
+  padding: 3rem 0;
+}
+.title {
+  color: var(--main2);
+  font-family: var(--fontA), sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+}
+p {
+  font-family: var(--fontC), sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+header {
+  height: 100vh;
+  background-image: url(./assets/me.JPG);
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.7rem 2rem;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+.navbar.scrolled {
+  background-color: var(--main1);
+}
+.navbar.drop {
+  height: 278px !important;
+}
+
+.navbar a,
+footer span,
+footer a {
+  color: #fff;
+  font-family: var(--fontB), sans-serif;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+.toggle-links,
+.social-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo i {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.logo a,
+.navbar .toggle-links a {
+  position: relative;
+}
+.logo a::after,
+.navbar .toggle-links a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #fff;
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+.logo a:hover::after,
+.navbar .toggle-links a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .social-links a {
+  font-size: 1.3rem;
+}
+.social-links i {
+  transition: 0.3s;
+}
+.social-links i:hover {
+  transform: scale(1.5);
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.jumbotron-content {
+  color: #fff;
+  margin: 0 0 0 5rem;
+}
+.jumbotron-content p {
+  font-family: var(--fontA), sans-serif;
+  font-size: 3.5rem;
+}
+.jumbotron-content a {
+  display: inline-block;
+  background-color: var(--main1);
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0 0;
+  border: 1px solid var(--main1);
+  padding: 0.8rem 1.1rem;
+  border-radius: 0.3rem;
+  transition: 0.3s;
+}
+.jumbotron-content a:hover {
+  border: 1px solid #fff;
+}
+
+/* GO UP */
+.go-to-up {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: none;
+  width: 45px;
+  height: 45px;
+  background-color: var(--main2);
+  color: #fff;
+  border-radius: 55%;
+  z-index: 9999;
+}
+.go-to-up.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ABOUT US */
+.about-me,
+.my-works {
+  padding: 3rem 0;
+}
+.about-me .wrapper {
+  width: 900px;
+}
+.about-me .wrapper .content {
+  width: 100%;
+}
+.about-me .wrapper .content .col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.about-me .wrapper .content .col .row {
+  display: grid;
+  grid-template-areas: 'img desc';
+  grid-template-columns: auto 1fr;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  width: 700px;
+  max-width: 90%;
+}
+.about-me .wrapper .content .col .row:nth-child(even) {
+  grid-template-areas: 'desc img';
+  grid-template-columns: 1fr auto;
+  justify-content: end;
+  margin: 0 0 0 auto;
+}
+.about-me .wrapper .content .col .row img {
+  grid-area: img;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.about-me .wrapper .content .col .row .desc {
+  grid-area: desc;
+}
+.about-me .wrapper .content .col .row:nth-child(even) .desc {
+  text-align: end;
+}
+.about-me .wrapper .content .col .row .desc span {
+  color: var(--main3);
+  font-family: var(--fontB);
+  font-size: 1.5rem;
+}
+.about-me .wrapper .content .service-header {
+  text-align: center;
+  margin: 5rem 0 3rem 0;
+}
+.about-me .wrapper .content .service-header span {
+  display: block;
+  color: var(--main2);
+  font-family: var(--fontA), sans-serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+.about-me .wrapper .content .service-header p {
+  font-family: var(--fontB);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.about-me .wrapper .content .myServices {
+  position: relative;
+  width: 100%;
+}
+.about-me .wrapper .content .myServices::before,
+.about-me .wrapper .content .myServices::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+}
+.about-me .wrapper .content .myServices::before {
+  left: -5rem;
+}
+.about-me .wrapper .content .myServices::after {
+  right: -5rem;
+  transform: rotateZ(180deg);
+}
+.about-me .wrapper .content .myServices .swiper-wrapper {
+  padding: 1rem 0;
+}
+.about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 10px);
+  background-color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide span {
+  color: var(--main3);
+  font-family: var(--fontB), sans-serif;
+  font-size: 1.3rem;
+  margin: 0.5rem 0 0 0;
+}
+
+/* MY JOURNEY */
+.my-journey .wrapper {
+  width: 800px;
+}
+.my-journey .wrapper .content {
+  width: 100%;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 0.5rem;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+  color: #fff;
+  font-size: 18px;
+  padding: 2.5rem 3.75rem;
+  cursor: grab;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide:active {
+  cursor: grabbing;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide :is(.title, .subtitle, .text) {
+  text-shadow: 1px 1px 2px #111;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+  color: #fff;
+  font-family: var(--fontB), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+  font-family: var(--fontA), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+  max-width: 400px;
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 1.5rem 0 0 0;
+}
+
+.my-journey .wrapper .content .skills-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100px;
+  gap: 0.5rem;
+  margin: 1rem 0 0 0;
+}
+.my-journey .wrapper .content .skills-container .skill {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.my-journey .wrapper .content .skills-container .skill img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+}
+.my-journey .wrapper .content .skills-container .skill .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--fontB), sans-serif;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 0.3s;
+}
+.my-journey .wrapper .content .skills-container .skill:hover .overlay {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+/* MY WORKS */
+.my-works .wrapper .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.my-works .wrapper .content p {
+  text-align: center;
+  padding: 0 0 1rem 0;
+}
+.my-works .wrapper .content .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.my-works .wrapper .content .projects .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  color: #000;
+  transition: 0.2s;
+}
+.my-works .wrapper .content .projects .row.err {
+  display: none;
+}
+.my-works .wrapper .content .projects .row:hover {
+  transform: scale(0.95);
+}
+.my-works .wrapper .content .projects .row img {
+  width: 300px;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.my-works .wrapper .content .projects .row:first-child img {
+  object-position: left;
+}
+.my-works .wrapper .content .projects .row .name-timeline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0 0.5rem 0;
+}
+.my-works .wrapper .content .projects .row .name-timeline :not(.name, .timeline) {
+  width: 1px;
+  height: 90%;
+  background-color: #000;
+}
+.my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+  color: var(--main3);
+  font-family: var(--fontA), sans-serif;
+  font-size: 1.3rem;
+}
+
+.user-check {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.user-check .input-box {
+  display: flex;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.user-check .input-box input {
+  padding: 0.8rem 0.5rem;
+  border: 1px solid var(--main1);
+  outline: none;
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+.user-check .input-box button {
+  background-color: var(--main1);
+  color: #fff;
+  font-family: var(--fontB), sans-serif;
+  padding: 0 0.8rem;
+  border: 1px solid var(--main1);
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+/* CONTACT */
+.contact {
+  padding: 0 0 3rem 0;
+}
+.contact .wrapper .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.contact .wrapper .content .get-in-touch {
+  display: grid;
+  grid-template-areas:
+    'head'
+    'contact';
+  gap: 1rem;
+  height: fit-content;
+}
+.contact .wrapper .content .get-in-touch .head {
+  grid-area: head;
+}
+.contact .wrapper .content .get-in-touch .head span {
+  color: var(--main3);
+  font-family: var(--fontA), sans-serif;
+  font-size: 2rem;
+}
+.contact .wrapper .content .get-in-touch .head p {
+  margin: 0.3rem 0 0 0;
+}
+.contact .wrapper .content .get-in-touch .col {
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact .wrapper .content .get-in-touch .col .row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--fontB), sans-serif;
+}
+.contact .wrapper .content .get-in-touch .col .row i {
+  color: var(--main1);
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+}
+.contact .wrapper .content .get-in-touch .col .row .text {
+  display: flex;
+  flex-direction: column;
+}
+.contact .wrapper .content .get-in-touch .col .row .text span {
+  color: var(--main1);
+  font-size: 1.1rem;
+}
+.contact .wrapper .content .contact-form {
+  display: grid;
+  grid-template-areas:
+    'nameBox emailBox'
+    'phoneBox phoneBox'
+    'msgBox msgBox'
+    'btn btn';
+  gap: 1rem;
+}
+
+.nameBox {
+  grid-area: nameBox;
+}
+.emailBox {
+  grid-area: emailBox;
+}
+.phoneBox {
+  grid-area: phoneBox;
+}
+.msgBox {
+  grid-area: msgBox;
+}
+.submit-btn {
+  grid-area: btn;
+}
+
+.contact .wrapper .content .contact-form .input-box,
+.contact .wrapper .content .contact-form .input-msg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.contact .wrapper .content .contact-form .input-box label,
+.contact .wrapper .content .contact-form .input-msg label {
+  color: var(--main3);
+  font-family: var(--fontA), sans-serif;
+  font-size: 1.2rem;
+}
+.contact .wrapper .content .contact-form .input-box input {
+  width: 100%;
+  font-family: var(--fontC), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 2rem 1rem 0.5rem;
+}
+.contact .wrapper .content .contact-form .input-msg input::placeholder,
+.contact .wrapper .content .contact-form .input-msg input::placeholder {
+  font-family: var(--fontC), sans-serif;
+  letter-spacing: 0.5px;
+}
+.contact .wrapper .content .contact-form .input-msg textarea {
+  height: 150px;
+  font-family: var(--fontC), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem;
+  resize: vertical;
+}
+.contact .wrapper .content .contact-form .input-box .clear-btn {
+  position: absolute;
+  top: 56%;
+  right: 3%;
+  color: var(--main4);
+}
+.contact .wrapper .content .contact-form .submit-btn {
+  background-color: var(--main2);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  border: 1px solid var(--main2);
+  transition: 0.2s;
+}
+.contact .wrapper .content .contact-form .submit-btn:hover {
+  background-color: transparent;
+  color: var(--main2);
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main3);
+  padding: 2rem 0;
+}
+footer span,
+footer a {
+  font-size: 1.1rem;
+}
+footer .social-links a {
+  font-size: 1.3rem;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1024px) {
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
+    width: calc(100% / 3 - 10px);
+    cursor: grab;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide:active {
+    cursor: grabbing;
+  }
+  .contact .wrapper .content .contact-form {
+    grid-template-areas:
+      'nameBox'
+      'emailBox'
+      'phoneBox'
+      'msgBox'
+      'btn';
+  }
+  .contact .wrapper .content .contact-form .submit-btn {
+    padding: 0.8rem;
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1.2rem 1.5rem;
+  }
+  .jumbotron-content {
+    margin: 0 0 0 4rem;
+  }
+  .jumbotron-content p {
+    font-size: 3rem;
+  }
+  .jumbotron-content a {
+    font-size: 1.2rem;
+    padding: 0.7rem 1rem;
+    margin: 1.2rem 0 0 0;
+  }
+  .about-me .wrapper .content .col .row img {
+    width: 250px;
+    height: 250px;
+  }
+  .about-me .wrapper .content .service-header {
+    margin: 4rem 0 2rem 0;
+  }
+  .about-me .wrapper .content .service-header span {
+    font-size: 1.8rem;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide p,
+  .about-me .wrapper .content .service-header p {
+    font-size: 1.1rem;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide span {
+    font-size: 1.2rem;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 2.5rem !important;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+    padding: 2rem 3.25rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+    font-size: 2.25rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+    font-size: 1.3rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+    font-size: 12px;
+    margin: 1.25rem 0 0 0;
+  }
+  .my-works .wrapper .content .projects .row img {
+    width: 250px;
+    height: 250px;
+  }
+  .contact .wrapper .content .get-in-touch .head span {
+    font-size: 1.75rem;
+  }
+  .contact .wrapper .content .get-in-touch .col .row i {
+    font-size: 1.3rem;
+  }
+  .contact .wrapper .content .get-in-touch .col .row .text span {
+    font-size: 1rem;
+  }
+  .contact .wrapper .content .contact-form {
+    gap: 0.75rem;
+  }
+  .contact .wrapper .content .contact-form .input-box label,
+  .contact .wrapper .content .contact-form .input-msg label {
+    font-size: 1.1rem;
+  }
+  .contact .wrapper .content .contact-form .input-box input {
+    padding: 0.75rem 1.75rem 0.75rem 0.5rem;
+  }
+  .contact .wrapper .content .contact-form .submit-btn {
+    padding: 0.7rem 0;
+  }
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 1.1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    padding: 1.2rem 0;
+  }
+  .logo a {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+  }
+  .logo i {
+    display: block;
+  }
+  .navbar .toggle-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .jumbotron-content {
+    margin: 0 0 0 3rem;
+  }
+  .jumbotron-content p {
+    font-size: 2.5rem;
+  }
+  .jumbotron-content a {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.9rem;
+    margin: 1rem 0 0 0;
+  }
+  .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .about-me .wrapper .content .col {
+    align-items: center;
+  }
+  .about-me .wrapper .content .col .row {
+    grid-template-areas:
+      'img'
+      'desc' !important;
+    justify-items: center;
+    gap: 0.5rem;
+    width: 500px;
+    max-width: 100%;
+    margin: 0 !important;
+  }
+  .about-me .wrapper .content .col .row .desc {
+    text-align: center !important;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
+    width: calc(50% - 10px);
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide img {
+    height: 150px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 2.2rem !important;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 6.5px;
+    height: 6.5px;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+    padding: 1.75rem 3rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+    font-size: 2rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+    font-size: 1.2rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+    font-size: 11px;
+    margin: 1.125rem 0 0 0;
+  }
+  .my-journey .wrapper .content .skills-container {
+    grid-template-rows: 75px;
+  }
+  .my-journey .wrapper .content .skills-container .skill .overlay {
+    font-size: 1rem;
+  }
+  .my-works .wrapper .content .projects .row img {
+    width: 200px;
+    height: 200px;
+  }
+  .my-works .wrapper .content .projects .row .name-timeline {
+    margin: 0.8rem 0 0.3rem 0;
+  }
+  .my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+    font-size: 1.2rem;
+  }
+  .contact .wrapper .content {
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+    height: fit-content;
+  }
+  .contact .wrapper .content .get-in-touch {
+    grid-template-areas: 'head contact';
+    align-items: center;
+    gap: 1.5rem;
+    height: fit-content;
+  }
+  .contact .wrapper .content .get-in-touch .col {
+    gap: 0.3rem;
+  }
+  .contact .wrapper .content .contact-form {
+    grid-template-areas:
+      'nameBox emailBox phoneBox'
+      'msgBox msgBox msgBox'
+      'btn btn btn';
+    gap: 0.5rem;
+  }
+  .contact .wrapper .content .get-in-touch .head span {
+    font-size: 1.5rem;
+  }
+  .contact .wrapper .content .contact-form .input-box input {
+    padding: 0.75rem 1.5rem 0.75rem 0.5rem;
+  }
+  .contact .wrapper .content .contact-form .submit-btn {
+    font-size: 1.1rem;
+  }
+  footer span,
+  footer .toggle-links a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .my-works .wrapper .content .projects {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .contact .wrapper .content .contact-form {
+    grid-template-areas:
+      'nameBox emailBox'
+      'phoneBox phoneBox'
+      'msgBox msgBox'
+      'btn btn';
+  }
+}
+@media (max-width: 576px) {
+  p {
+    font-size: 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .navbar.drop {
+    height: 236px !important;
+  }
+  .logo a {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+  }
+  .logo i {
+    font-size: 1.3rem !important;
+  }
+  .navbar .toggle-links {
+    padding: 0.5rem 0;
+  }
+  .navbar .toggle-links a {
+    font-size: 1rem;
+  }
+  .jumbotron-content {
+    margin: 0 0 0 2rem;
+  }
+  .jumbotron-content p {
+    font-size: 2rem;
+  }
+  .jumbotron-content a {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    margin: 1rem 0 0 0;
+  }
+  .go-to-up {
+    bottom: 5rem;
+    width: 35px;
+    height: 35px;
+  }
+  .title {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  .about-me .wrapper .content .col .row img {
+    width: 200px;
+    height: 200px;
+  }
+  .about-me .wrapper .content .col .row {
+    width: 400px;
+  }
+  .about-me .wrapper .content .col .row .desc span {
+    font-size: 1.2rem;
+  }
+  .about-me .wrapper .content .service-header {
+    margin: 3rem 0 1.5rem 0;
+  }
+  .about-me .wrapper .content .service-header span {
+    font-size: 1.6rem;
+    margin: 0 0 0.3rem 0;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide p,
+  .about-me .wrapper .content .service-header p {
+    font-size: 1rem;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide span {
+    font-size: 1rem;
+  }
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide img {
+    height: 125px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 2rem !important;
+  }
+  .swiper-pagination {
+    bottom: 5px !important;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+    padding: 1.5rem 2.5rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+    font-size: 1.8rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+    font-size: 1.1rem;
+  }
+  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+    font-size: 10px;
+    margin: 1rem 0 0 0;
+  }
+  .my-journey .wrapper .content .skills-container {
+    grid-template-rows: 50px;
+    gap: 0.3rem;
+    margin: 0.5rem 0 0 0;
+  }
+  .my-journey .wrapper .content .skills-container .skill .overlay {
+    font-size: 0.7rem;
+  }
+  .my-works .wrapper .content {
+    width: 350px;
+    max-width: 100%;
+  }
+  .my-works .wrapper .content .projects {
+    gap: 1.5rem;
+  }
+  .my-works .wrapper .content .projects .row .name-timeline {
+    margin: 0.5rem 0 0 0;
+  }
+  .my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+    font-size: 1.1rem;
+  }
+  .contact .wrapper .content {
+    gap: 1rem;
+    width: 400px;
+    max-width: 100%;
+  }
+  .contact .wrapper .content .get-in-touch {
+    grid-template-areas:
+      'head'
+      'contact';
+    gap: 0.5rem;
+  }
+  .contact .wrapper .content .get-in-touch .head span {
+    font-size: 1.25rem;
+  }
+  .contact .wrapper .content .get-in-touch .head p {
+    margin: 0;
+  }
+  .contact .wrapper .content .contact-form {
+    grid-template-areas:
+      'nameBox'
+      'emailBox'
+      'phoneBox'
+      'msgBox'
+      'btn';
+  }
+  .contact .wrapper .content .get-in-touch .col .row,
+  .contact .wrapper .content .contact-form .input-box input {
+    font-size: 0.9rem;
+  }
+  .contact .wrapper .content .contact-form .input-box input {
+    padding: 0.5rem 1.5rem 0.5rem 0.3rem;
+  }
+  .contact .wrapper .content .contact-form .input-box label,
+  .contact .wrapper .content .contact-form .input-msg label,
+  .contact .wrapper .content .contact-form .submit-btn {
+    font-size: 1rem;
+  }
+  footer {
+    padding: 1.5rem 0;
+  }
+  footer .toggle-links {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 425px) {
+  .about-me .wrapper .content .myServices .swiper-wrapper .swiper-slide {
+    width: 100%;
+  }
+}

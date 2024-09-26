@@ -1,0 +1,5 @@
+- Think about the img that'll be put in my Jumbotron
+- Make only 3 columns in "My Services"
+- Find a better bgi for "My Journey"
+- Change the text color of JavaScript in "My Journey"
+- Make the "X" sign only appear when there is a value, "Contact Me"
