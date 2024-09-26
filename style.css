@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap");
 
 :root {
   --main1: #141a0c;
   --main2: #465d39;
   --main3: #786e4d;
   --main4: #e04448;
-  --fontA: 'Roboto';
-  --fontB: 'Poppins';
-  --fontC: 'EB Garamond';
+  --fontA: "Roboto";
+  --fontB: "Poppins";
+  --fontC: "EB Garamond";
 }
 
 * {
@@ -105,7 +105,7 @@ footer a {
 }
 .logo a::after,
 .navbar .toggle-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -196,7 +196,7 @@ footer a {
 }
 .about-me .wrapper .content .col .row {
   display: grid;
-  grid-template-areas: 'img desc';
+  grid-template-areas: "img desc";
   grid-template-columns: auto 1fr;
   justify-content: start;
   align-items: center;
@@ -205,7 +205,7 @@ footer a {
   max-width: 90%;
 }
 .about-me .wrapper .content .col .row:nth-child(even) {
-  grid-template-areas: 'desc img';
+  grid-template-areas: "desc img";
   grid-template-columns: 1fr auto;
   justify-content: end;
   margin: 0 0 0 auto;
@@ -249,12 +249,16 @@ footer a {
 }
 .about-me .wrapper .content .myServices::before,
 .about-me .wrapper .content .myServices::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 15%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 2;
 }
 .about-me .wrapper .content .myServices::before {
@@ -300,7 +304,13 @@ footer a {
   background-color: #000;
   border-radius: 0.5rem;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide {
   color: #fff;
   font-size: 18px;
   padding: 2.5rem 3.75rem;
@@ -308,7 +318,13 @@ footer a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide:active {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide:active {
   cursor: grabbing;
 }
 .my-journey .wrapper .content .experience-carousel .myExperiences .parallax-bg {
@@ -321,22 +337,50 @@ footer a {
   background-size: cover;
   background-position: center;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide :is(.title, .subtitle, .text) {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide
+  :is(.title, .subtitle, .text) {
   text-shadow: 1px 1px 2px #111;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide
+  .title {
   color: #fff;
   font-family: var(--fontB), sans-serif;
   font-size: 2.5rem;
   font-weight: 300;
   margin: 0;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide
+  .subtitle {
   font-family: var(--fontA), sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
 }
-.my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+.my-journey
+  .wrapper
+  .content
+  .experience-carousel
+  .myExperiences
+  .swiper-wrapper
+  .swiper-slide
+  .text {
   max-width: 400px;
   font-size: 14px;
   line-height: 1.3;
@@ -433,12 +477,24 @@ footer a {
   gap: 1.5rem;
   margin: 1rem 0 0.5rem 0;
 }
-.my-works .wrapper .content .projects .row .name-timeline :not(.name, .timeline) {
+.my-works
+  .wrapper
+  .content
+  .projects
+  .row
+  .name-timeline
+  :not(.name, .timeline) {
   width: 1px;
   height: 90%;
   background-color: #000;
 }
-.my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+.my-works
+  .wrapper
+  .content
+  .projects
+  .row
+  .name-timeline
+  :is(.name, .timeline) {
   color: var(--main3);
   font-family: var(--fontA), sans-serif;
   font-size: 1.3rem;
@@ -488,8 +544,8 @@ footer a {
 .contact .wrapper .content .get-in-touch {
   display: grid;
   grid-template-areas:
-    'head'
-    'contact';
+    "head"
+    "contact";
   gap: 1rem;
   height: fit-content;
 }
@@ -532,10 +588,10 @@ footer a {
 .contact .wrapper .content .contact-form {
   display: grid;
   grid-template-areas:
-    'nameBox emailBox'
-    'phoneBox phoneBox'
-    'msgBox msgBox'
-    'btn btn';
+    "nameBox emailBox"
+    "phoneBox phoneBox"
+    "msgBox msgBox"
+    "btn btn";
   gap: 1rem;
 }
 
@@ -634,11 +690,11 @@ footer .social-links a {
   }
   .contact .wrapper .content .contact-form {
     grid-template-areas:
-      'nameBox'
-      'emailBox'
-      'phoneBox'
-      'msgBox'
-      'btn';
+      "nameBox"
+      "emailBox"
+      "phoneBox"
+      "msgBox"
+      "btn";
   }
   .contact .wrapper .content .contact-form .submit-btn {
     padding: 0.8rem;
@@ -680,16 +736,43 @@ footer .social-links a {
   .swiper-button-prev:after {
     font-size: 2.5rem !important;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide {
     padding: 2rem 3.25rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .title {
     font-size: 2.25rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .subtitle {
     font-size: 1.3rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .text {
     font-size: 12px;
     margin: 1.25rem 0 0 0;
   }
@@ -761,8 +844,8 @@ footer .social-links a {
   }
   .about-me .wrapper .content .col .row {
     grid-template-areas:
-      'img'
-      'desc' !important;
+      "img"
+      "desc" !important;
     justify-items: center;
     gap: 0.5rem;
     width: 500px;
@@ -786,16 +869,43 @@ footer .social-links a {
     width: 6.5px;
     height: 6.5px;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide {
     padding: 1.75rem 3rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .title {
     font-size: 2rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .subtitle {
     font-size: 1.2rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .text {
     font-size: 11px;
     margin: 1.125rem 0 0 0;
   }
@@ -812,7 +922,13 @@ footer .social-links a {
   .my-works .wrapper .content .projects .row .name-timeline {
     margin: 0.8rem 0 0.3rem 0;
   }
-  .my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+  .my-works
+    .wrapper
+    .content
+    .projects
+    .row
+    .name-timeline
+    :is(.name, .timeline) {
     font-size: 1.2rem;
   }
   .contact .wrapper .content {
@@ -822,7 +938,7 @@ footer .social-links a {
     height: fit-content;
   }
   .contact .wrapper .content .get-in-touch {
-    grid-template-areas: 'head contact';
+    grid-template-areas: "head contact";
     align-items: center;
     gap: 1.5rem;
     height: fit-content;
@@ -832,9 +948,9 @@ footer .social-links a {
   }
   .contact .wrapper .content .contact-form {
     grid-template-areas:
-      'nameBox emailBox phoneBox'
-      'msgBox msgBox msgBox'
-      'btn btn btn';
+      "nameBox emailBox phoneBox"
+      "msgBox msgBox msgBox"
+      "btn btn btn";
     gap: 0.5rem;
   }
   .contact .wrapper .content .get-in-touch .head span {
@@ -857,10 +973,10 @@ footer .social-links a {
   }
   .contact .wrapper .content .contact-form {
     grid-template-areas:
-      'nameBox emailBox'
-      'phoneBox phoneBox'
-      'msgBox msgBox'
-      'btn btn';
+      "nameBox emailBox"
+      "phoneBox phoneBox"
+      "msgBox msgBox"
+      "btn btn";
   }
 }
 @media (max-width: 576px) {
@@ -945,16 +1061,43 @@ footer .social-links a {
     width: 5px;
     height: 5px;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide {
     padding: 1.5rem 2.5rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .title {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .title {
     font-size: 1.8rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .subtitle {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .subtitle {
     font-size: 1.1rem;
   }
-  .my-journey .wrapper .content .experience-carousel .myExperiences .swiper-wrapper .swiper-slide .text {
+  .my-journey
+    .wrapper
+    .content
+    .experience-carousel
+    .myExperiences
+    .swiper-wrapper
+    .swiper-slide
+    .text {
     font-size: 10px;
     margin: 1rem 0 0 0;
   }
@@ -976,7 +1119,13 @@ footer .social-links a {
   .my-works .wrapper .content .projects .row .name-timeline {
     margin: 0.5rem 0 0 0;
   }
-  .my-works .wrapper .content .projects .row .name-timeline :is(.name, .timeline) {
+  .my-works
+    .wrapper
+    .content
+    .projects
+    .row
+    .name-timeline
+    :is(.name, .timeline) {
     font-size: 1.1rem;
   }
   .contact .wrapper .content {
@@ -986,8 +1135,8 @@ footer .social-links a {
   }
   .contact .wrapper .content .get-in-touch {
     grid-template-areas:
-      'head'
-      'contact';
+      "head"
+      "contact";
     gap: 0.5rem;
   }
   .contact .wrapper .content .get-in-touch .head span {
@@ -998,11 +1147,11 @@ footer .social-links a {
   }
   .contact .wrapper .content .contact-form {
     grid-template-areas:
-      'nameBox'
-      'emailBox'
-      'phoneBox'
-      'msgBox'
-      'btn';
+      "nameBox"
+      "emailBox"
+      "phoneBox"
+      "msgBox"
+      "btn";
   }
   .contact .wrapper .content .get-in-touch .col .row,
   .contact .wrapper .content .contact-form .input-box input {
