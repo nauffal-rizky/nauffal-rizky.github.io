@@ -1,5 +1,11 @@
+- Minimize the size of the pictures used
+- Shorten the paragraph used
 - Think about the img that'll be put in my Jumbotron
 - Make only 3 columns in "My Services"
 - Find a better bgi for "My Journey"
 - Change the text color of JavaScript in "My Journey"
 - Make the "X" sign only appear when there is a value, "Contact Me"
+- Make options effect (overlay) when click on wedding invitation project
+- Make hover animations on each projects: the thumbnail will change (fade-in fade-out)
+- Tide up the images folder on projects folder based on the project
+- Screenshot the wedding invitation websites per slide

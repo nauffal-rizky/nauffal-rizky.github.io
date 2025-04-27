@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>N&D Wedding</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+
+    <!-- "Sacramento" FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- "Work Sans" FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- COUNTDOWN -->
+    <link
+      rel="stylesheet"
+      href="./countdown/simplyCountdown.theme.default.css"
+    />
+    <script src="./countdown/simplyCountdown.min.js"></script>
+
+    <!-- MAIN CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+      :root {
+        --white: #fafafa;
+        --black: #151515;
+        --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      body {
+        font-family: "Work Sans", sans-serif;
+        font-size: 1.2rem;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/jumbotron.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+
+      .hero h4,
+      .hero h1,
+      .hero p {
+        text-shadow: var(--shadow);
+      }
+      .hero h4 {
+        font-size: 1.4rem;
+      }
+      .hero h1 {
+        font-family: "Sacramento", cursive;
+        font-size: 6rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+      .hero a {
+        background-color: var(--white);
+        color: var(--black);
+        border: 1.5px solid var(--white);
+        transition: 0.3s;
+      }
+      .hero a:hover {
+        background-color: var(--black);
+        color: var(--white);
+        border: 1.5px solid var(--white);
+      }
+
+      /* NAVBAR */
+      .myNavbar {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        backdrop-filter: blur(4px);
+        overflow: hidden;
+      }
+      .myNavbar .offcanvas {
+        height: 100vh;
+        overflow: hidden;
+      }
+      .myNavbar .navbar-brand,
+      .myNavbar .offcanvar-title {
+        font-family: "Sacramento", cursive;
+        font-size: 3.2rem;
+        font-weight: bold;
+      }
+      .myNavbar .nav-link {
+        text-transform: uppercase;
+      }
+
+      /* HOME */
+      .home {
+        min-height: 100vh;
+        margin: -6rem 0 0 0;
+        padding: 15rem 0 5rem 0;
+      }
+      .home h2,
+      .info h2,
+      .story h2,
+      .gallery h2,
+      .rsvp h2,
+      .gifts h2 {
+        color: var(--black);
+        font-family: "Sacramento", cursive;
+        font-size: 5rem;
+        font-weight: bold;
+      }
+      .home h3 {
+        color: #444;
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+      }
+      .home p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .home .couple {
+        margin: 100px 0px 0px 0px;
+      }
+      .home .couple h3 {
+        color: var(--black);
+        font-family: "Sacramento", cursive;
+        font-size: 2.4rem;
+      }
+      .home .couple img {
+        width: 100%;
+      }
+      .home .heart {
+        position: absolute;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: var(--black);
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+        transform: translate(-50%, 65px);
+      }
+      .home .heart i {
+        color: var(--white);
+      }
+
+      /* INFO */
+      .info {
+        background-color: var(--black);
+        color: #fff;
+        padding: 10rem 0 8rem 0;
+      }
+      .info h2,
+      .rsvp h2 {
+        color: var(--white);
+      }
+      .info .alamat {
+        font-size: 1.1rem;
+      }
+      .info .description {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+      .info .card {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        color: #fff !important;
+        border: 1px solid #999;
+      }
+      .info .card-header {
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+      .info .card-body {
+        font-size: 1rem;
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+      }
+      .info .card-footer {
+        font-size: 0.9rem;
+        font-weight: 300;
+      }
+
+      /* STORY */
+      .story,
+      .gallery,
+      .rsvp,
+      .gifts {
+        padding: 10rem 0 8rem 0;
+      }
+      .story span,
+      .gallery span,
+      .gifts span {
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 0 1rem 0;
+      }
+      .story p,
+      .gallery p,
+      .rsvp p,
+      .gifts p {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+      .timeline {
+        position: relative;
+        list-style: none;
+        padding: 1.4rem 0;
+        margin: 1rem 0 0 0;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background-color: #ccc;
+      }
+      .timeline li {
+        position: relative;
+        margin: 0 0 1.5rem 0;
+      }
+      .timeline li::before,
+      .timeline li::after {
+        content: "";
+        display: table;
+      }
+      .timeline li::after {
+        clear: both;
+      }
+      .timeline li .timeline-image {
+        position: absolute;
+        left: 50%;
+        width: 160px;
+        height: 160px;
+        background-color: #ccc;
+        background-size: cover;
+        background-position: center;
+        transform: translateX(-50%);
+        border-radius: 50%;
+      }
+      .timeline li .timeline-panel {
+        position: relative;
+        width: 40%;
+        float: left;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 2rem;
+      }
+      .timeline li .timeline-panel::before {
+        content: "";
+        position: absolute;
+        top: 65px;
+        right: -15px;
+        display: inline-block;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #ccc;
+        border-right: 0 solid #ccc;
+      }
+      .timeline li .timeline-panel::after {
+        content: "";
+        position: absolute;
+        top: 66px;
+        right: -13px;
+        display: inline-block;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 14px solid #fff;
+        border-right: 0 solid #fff;
+      }
+      .timeline li.timeline-inverted .timeline-panel {
+        float: right;
+      }
+      .timeline li.timeline-inverted .timeline-panel::before {
+        left: -15px;
+        right: auto;
+        border-left-width: 0;
+        border-right-width: 15px;
+      }
+      .timeline li.timeline-inverted .timeline-panel::after {
+        left: -13px;
+        right: auto;
+        border-left-width: 0;
+        border-right-width: 14px;
+      }
+
+      /* RSVP */
+      .rsvp {
+        background-color: var(--black);
+      }
+      .rsvp h2 {
+        font-size: 4.5rem;
+      }
+      .rsvp form label,
+      .rsvp p {
+        color: #fff;
+      }
+      .rsvp button {
+        background-color: var(--white);
+        color: var(--black);
+        border: 1px solid var(--white);
+      }
+      .rsvp button:hover {
+        background-color: #fff;
+        color: var(--white);
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: var(--black);
+        color: var(--white);
+        padding: 2rem 2.5rem;
+      }
+      footer p {
+        text-align: end;
+        margin: 0 !important;
+      }
+
+      /* BREAKPOINTS */
+      @media (max-width: 1400px) {
+        .home .heart {
+          transform: translate(-50%, 50px);
+        }
+      }
+      @media (max-width: 1200px) {
+        .home .heart {
+          transform: translate(-50%, 40px);
+        }
+      }
+      @media (max-width: 992px) {
+        html {
+          font-size: 75%;
+        }
+        .simply-countdown > .simply-section {
+          padding: 40px;
+        }
+        .home .heart {
+          display: none;
+        }
+        .timeline::before {
+          left: 60px;
+        }
+        .timeline li .timeline-image {
+          top: 16px;
+          left: 15px;
+          margin: 0px 0px 0px 45px;
+        }
+        .timeline li .timeline-panel {
+          width: calc((100% - 200px));
+          float: right;
+        }
+        .timeline li .timeline-panel::before {
+          left: -15px;
+          right: auto;
+          border-left-width: 0;
+          border-right-width: 15px;
+        }
+        .timeline li .timeline-panel::after {
+          left: -13px;
+          right: auto;
+          border-left-width: 0;
+          border-right-width: 14px;
+        }
+      }
+      @media (max-width: 768px) {
+        html {
+          font-size: 65%;
+        }
+        .simply-countdown > .simply-section {
+          padding: 30px;
+          margin: 5px;
+        }
+        .myNavbar .nav-link {
+          font-size: 2rem;
+          text-align: center;
+        }
+        .timeline li .timeline-image {
+          width: 140px;
+          height: 140px;
+        }
+      }
+      @media (max-width: 576px) {
+        html {
+          font-size: 60%;
+        }
+        .simply-countdown > .simply-section {
+          padding: 25px;
+          margin: 3px;
+        }
+        .timeline::before {
+          left: 100px;
+        }
+        .timeline li .timeline-image {
+          left: 55px;
+          width: 100px;
+          height: 100px;
+        }
+        .timeline li .timeline-panel {
+          width: 50%;
+          transform: translateX(-20px);
+        }
+        .timeline li .timeline-panel::before {
+          top: 40px;
+        }
+        .timeline li .timeline-panel::after {
+          top: 41px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
+    >
+      <main>
+        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+        <h1>Nauffal & Dwi</h1>
+        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+        <div class="simply-countdown"></div>
+        <a href="#home" class="btn btn-lg mt-4 enable-scroll-btn"
+          >Lihat undangan</a
+        >
+      </main>
+    </section>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top myNavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">N&D Wedding</a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              N&D Wedding
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#info">Info</a>
+              <a class="nav-link" href="#story">Story</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
+              <a class="nav-link" href="#rsvp">RSVP</a>
+              <a class="nav-link" href="#gifts">Gifts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="home">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Acara Pernikahan</h2>
+            <h3>Diselenggarakan pada 02 April 2024 di Bogor, Jawa Barat.</h3>
+            <p>
+              Oleh karena itu, dengan segala hormat, kami bermaksud untuk
+              mengundang Bapak/Ibu/Saudara/i, untuk hadir pada acara pernikahan
+              kami.
+            </p>
+          </div>
+        </div>
+        <div class="row couple">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-8 text-end">
+                <h3>Nauffal Nur Rizky</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                  ullam, rerum consequatur error doloribus quibusdam?
+                </p>
+                <p>
+                  Putra dari Bpk. Lorem <br />
+                  dan <br />
+                  Ibu Ipsum
+                </p>
+              </div>
+              <div class="col-4">
+                <img
+                  src="./img/male.jpg"
+                  alt="Nauffal Nur Rizky"
+                  class="img-responsive rounded-circle"
+                />
+              </div>
+            </div>
+          </div>
+          <span class="heart"><i class="bi bi-heart-fill"></i></span>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="./img/female.jpg"
+                  alt="Dwi Handayani Wijaya"
+                  class="img-responsive rounded-circle"
+                />
+              </div>
+              <div class="col-8 text-end">
+                <h3>Dwi Handayani Wijaya</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                  ullam, rerum consequatur error doloribus quibusdam?
+                </p>
+                <p>
+                  Putra dari Bpk. Ipsum <br />
+                  dan <br />
+                  Ibu Lorem
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section id="info" class="info">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Informasi Acara</h2>
+            <p class="alamat">
+              Alamat: Jl. Pasir Angin, Nagrak, Kec. Sukaraja, Kabupaten Bogor,
+              Jawa Barat
+            </p>
+            <a
+              href="https://maps.app.goo.gl/Zyv3Auoi3f58NYHw9"
+              target="_blank"
+              class="btn btn-light btn-sm my-3"
+              >Klik untuk membuka peta</a
+            >
+            <p class="description">
+              Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di
+              tujuan namun tidak ada tanda-tanda sedang dilangsungkan
+              pernikahan, boleh jadi Anda salah jadwal, atau salah tempat
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-5 col-10">
+            <div class="card text-center text-bg-light mb-4">
+              <div class="card-header">Akad Nikah</div>
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar2-heart d-block"></i>
+                    <span>08.00 - 10.00</span>
+                  </div>
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar2-heart d-block"></i>
+                    <span>Selasa, 02 April 2024</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan
+                dan kekhusyuan seluruh prosesi.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-10">
+            <div class="card text-center text-bg-light">
+              <div class="card-header">Resepsi</div>
+              <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar2-heart d-block"></i>
+                    <span>11.00 - selesai</span>
+                  </div>
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar2-heart d-block"></i>
+                    <span>Selasa, 02 April 2024</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                Saat acara resepsi diharapkan untuk kondusif menjaga kekhidmatan
+                dan kekhusyuan seluruh prosesi.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span class="d-block">Bagaimana Cinta Kita Bersemi</span>
+            <h2>Cerita Kami</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Reiciendis aliquid mollitia id molestiae molestias excepturi in
+              blanditiis at voluptatum cum!
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/300/300)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Awal bertemu</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/301/301)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai dekat</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/302/302)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai pacaran</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/303/303)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai tunangan</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/304/304)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai lamaran</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/305/305)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai menikah</h3>
+                    <span>Februari 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Voluptas voluptatum tempora reprehenderit illo pariatur
+                      velit?
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Memori kisah kami</span>
+            <h2>Galeri foto</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+              veritatis placeat quis doloribus nulla perspiciatis.
+            </p>
+          </div>
+        </div>
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="./img/male.jpg"
+              data-toggle="lightbox"
+              data-caption="This describes the image"
+              data-gallery="myGallery"
+            >
+              <img
+                src="./img/female.jpg"
+                alt="bride & groom"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form dibawah ini untuk melakukan konfirmasi kehadiran.</p>
+          </div>
+        </div>
+
+        <form
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbzZ-jlQV4faI3jGhNgDOxMOS2mf_cmpyuHXgriSJ_FPKZ0uI_-MehADQTqv4KI301s/exec"
+          class="row row-cols-md-auto g-3 justify-content-center align-items-center"
+          id="my-form"
+        >
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" id="nama" class="form-control" name="nama" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input
+                type="number"
+                id="jumlah"
+                class="form-control"
+                name="jumlah"
+                min="1"
+                max="3"
+                length="1"
+                placeholder="1"
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">Konfirmasi</label>
+              <select name="status" id="status" class="form-select">
+                <option selected>Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="TidakHadir">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- GIFTS -->
+    <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Ungkapan Tanda Kasih</span>
+            <h2>Kirim Hadiah</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Doloribus asperiores ex dolores quod ad esse.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                123456789 - Pasangan Mempelai Pria dan Wanita
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                987654321 - Mempelai Pria
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                135792468 - Mempelai Wanita
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy;2024 All Rights Reserved</p>
+    </footer>
+
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- LIGHTBOX BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+    <!-- COUNTDOWN -->
+    <script>
+      simplyCountdown(".simply-countdown", {
+        year: 2024, // required
+        month: 4, // required
+        day: 2, // required
+        hours: 8, // Default is 0 [0-23] integer
+        minutes: 0, // Default is 0 [0-59] integer
+        seconds: 0, // Default is 0 [0-59] integer
+        words: {
+          //words displayed into the countdown
+          days: { singular: "hari", plural: "hari" },
+          hours: { singular: "jam", plural: "jam" },
+          minutes: { singular: "menit", plural: "menit" },
+          seconds: { singular: "detik", plural: "detik" },
+        },
+      });
+
+      // OFFCANVAS
+      const offCanvas = document.querySelector(".offcanvas");
+      const stickyTop = document.querySelector(".sticky-top");
+
+      offCanvas.addEventListener("show.bs.offcanvas", () => {
+        stickyTop.style.overflow = "visible";
+      });
+
+      offCanvas.addEventListener("hidden.bs.offcanvas", () => {
+        stickyTop.style.overflow = "hidden";
+      });
+
+      // DISABLE SCROLL
+      const root = document.querySelector(":root");
+
+      const disableScroll = () => {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        root.style.scrollBehavior = "auto";
+      };
+
+      const enableScroll = () => {
+        window.onscroll = function () {};
+        root.style.scrollBehavior = "smooth";
+      };
+      const enableScrollBtn = document.querySelector(".enable-scroll-btn");
+      enableScrollBtn.addEventListener("click", () => {
+        enableScroll();
+      });
+
+      disableScroll();
+
+      // FORM
+      window.addEventListener("load", () => {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Konfirmasi kehadiran sudah terkirim!");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
